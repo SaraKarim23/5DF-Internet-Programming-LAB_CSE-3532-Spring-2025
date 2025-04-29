@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Settings</title>
+  <link rel="stylesheet" href="settings.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="settings-header">
+    <h1><i class="fas fa-cog"></i> Settings</h1>
+    <nav>
+        <a href="user dashboard.html"><i class="fas fa-home"></i> Home</a>
+        <a href="wallet.html"><i class="fas fa-wallet"></i> Wallet</a>
+        <a href="market.html"><i class="fas fa-chart-line"></i> Market</a>
+        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+        <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </nav>
+  </header>
+
+  <main class="settings-container">
+
+    <!-- Account Info -->
+    <section class="settings-card">
+      <h2>Account Information</h2>
+      <form>
+        <label>Email:</label>
+        <input type="email" value="john@example.com" />
+        
+        <label>Username:</label>
+        <input type="text" value="john_doe" />
+        
+        <button type="submit">Update Info</button>
+      </form>
+    </section>
+
+    <!-- Password Change -->
+    <section class="settings-card">
+      <h2>Change Password</h2>
+      <form>
+        <label>Current Password:</label>
+        <input type="password" />
+
+        <label>New Password:</label>
+        <input type="password" />
+
+        <label>Confirm New Password:</label>
+        <input type="password" />
+        
+        <button type="submit">Change Password</button>
+      </form>
+    </section>
+
+    <!-- Notification Preferences -->
+    <section class="settings-card">
+      <h2>Notification Preferences</h2>
+      <form>
+        <label><input type="checkbox" checked /> Email Alerts</label><br>
+        <label><input type="checkbox" /> SMS Alerts</label><br>
+        <label><input type="checkbox" checked /> Push Notifications</label><br>
+        
+        <button type="submit">Save Preferences</button>
+      </form>
+    </section>
+
+  </main>
+
+</body>
+</html>

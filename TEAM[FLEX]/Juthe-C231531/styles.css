@@ -1,0 +1,137 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('back 2.jpeg'); 
+  background-size:-150%; /* Increase percentage to zoom out */
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+
+/* Login and Signup Container */
+.login-container, .signup-container {
+  background-color: rgba(42, 42, 42, 0.85); /* Slight transparency for better readability */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-container h2, .signup-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Input Fields */
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Focus Effect */
+.input-group input:focus {
+  outline: none;
+  border-color: #00c8ff;
+  box-shadow: 0 0 8px rgba(0, 200, 255, 0.6);
+}
+
+/* Login and Signup Buttons */
+.login-button, .signup-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #00c8ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-button:hover, .signup-button:hover {
+  background-color: #0088b8;
+  transform: scale(1.05);
+}
+
+/* Social Login */
+.social-login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.social-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Social Button Colors */
+.google {
+  background-color: #2e6ac4; 
+}
+
+.google:hover {
+  background-color: #2e7dc2;
+}
+
+.facebook {
+  background-color: #1877f2; 
+}
+
+.facebook:hover {
+  background-color: #125ecf;
+}
+
+.twitter {
+  background-color: #1da1f2; 
+}
+
+.twitter:hover {
+  background-color: #0d8de1;
+}
+
+/* Footer Links */
+.footer-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-text a {
+  color: #00c8ff;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}

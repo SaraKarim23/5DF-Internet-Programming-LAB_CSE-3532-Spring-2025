@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Tracker | Stay Organized</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Login Page -->
+  <div id="loginPage" class="container">
+    
+    <!-- Header Section -->
+    <div id="header">
+      <img src="task-icon.png" alt="Task Tracker Logo" id="logo">
+      <div class="welcome-box">
+        <h1 class="animated-title">Welcome to Task Tracker<span class="highlight"></span></h1>
+      </div>
+      <h2 class="subtitle">Plan. Organize. Achieve. Stay on top of your goals effortlessly!</h2>
+      <img src="task-banner.png" alt="Stay Organized" class="banner-image">
+    </div>
+    
+    <!-- Login Section -->
+    <div id="loginSection">
+      <h3 class="animated-text">Login & Take Charge of Your Productivity</h3>
+      <form id="loginForm">
+        <label for="loginEmail">📧 Email</label>
+        <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required>
+        <label for="loginPassword">🔒 Password</label>
+        <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required>
+        <button type="submit" class="btn login-btn">🚀 Login Now</button>
+      </form>
+    </div>
+
+    <!-- Register Section -->
+    <div id="registerSection">
+      <h3 class="register-heading">🎉 New Here? Sign Up & Get Started!</h3>
+      <form id="registerForm">
+        <label for="registerEmail">📧 Email</label>
+        <input type="email" id="registerEmail" name="email" placeholder="Enter your email" required>
+        <label for="registerPassword">🔒 Password</label>
+        <input type="password" id="registerPassword" name="password" placeholder="Create a password" required>
+        <label for="confirmPassword">🔄 Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" required>
+        <button type="submit" class="btn register-btn">✨ Create Account</button>
+      </form>
+    </div>
+
+    <button id="showRegisterButton" class="toggle-btn">Don't have an account? Register</button>
+    <button id="showLoginButton" class="toggle-btn" style="display: none;">Already have an account? Login</button>
+  </div>
+
+  <!-- Task Management Page -->
+  <div id="taskPage" class="container" style="display: none;">
+    <h2 class="page-heading">Your Tasks, Your Success!</h2>
+    <div id="taskIcon">
+      <img src="task-icon.png" alt="Task Tracker Logo" width="100" height="100">
+    </div>
+    <button id="addTaskButton" class="btn add-task-btn">📝 Add a New Task</button>
+    <div id="taskForm" style="display: none;">
+      <input type="text" id="taskInput" placeholder="Enter task">
+      <button id="saveTaskButton" class="btn save-task-btn">✅ Save Task</button>
+    </div>
+    <ul id="taskList">
+      <!-- Tasks will appear here -->
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

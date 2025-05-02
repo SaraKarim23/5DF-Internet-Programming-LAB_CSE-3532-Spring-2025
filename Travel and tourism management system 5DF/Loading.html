@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading - Travel and Tourism Application</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: 'Raleway', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: blue;
+            font-size: 35px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        #progress-container {
+            width: 300px;
+            background-color: #eee;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 35px;
+            margin-bottom: 20px;
+        }
+
+        #progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #4CAF50;
+            text-align: center;
+            color: white;
+            line-height: 35px;
+            font-weight: bold;
+            transition: width 0.5s;
+        }
+
+        #loading-text, #welcome-text {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Travel and Tourism Application</h1>
+
+    <div id="progress-container">
+        <div id="progress-bar">0%</div>
+    </div>
+
+    <div id="loading-text">Loading, please wait...</div>
+    <div id="welcome-text"></div>
+
+    <script>
+        let progress = 0;
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const username = urlParams.get('username') || "Guest";
+
+        document.getElementById('welcome-text').innerText = "Welcome " + username;
+
+        function updateProgress() {
+            if (progress <= 100) {
+                document.getElementById('progress-bar').style.width = progress + "%";
+                document.getElementById('progress-bar').innerText = progress + "%";
+                progress++;
+                setTimeout(updateProgress, 50);
+            } else {
+                // Redirect to dashboard.html after loading completes
+                window.location.href = "dashboard.html?username=" + encodeURIComponent(username);
+            }
+        }
+
+        updateProgress();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+        }
+        .container {
+            display: flex;
+            width: 900px;
+            height: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .left-panel {
+            background-color: #83C1E9;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .left-panel img {
+            width: 200px;
+            height: 200px;
+        }
+        .right-panel {
+            width: 60%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .right-panel h2 {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #83C1E9;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #6aaed6;
+        }
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <img src="icons/login.png" alt="Login Icon">
+        </div>
+        <div class="right-panel">
+            <h2>Login</h2>
+            <label>Username</label>
+            <input type="text" id="username" placeholder="Enter Username">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter Password">
+            <button onclick="login()">Login</button>
+            <button onclick="signup()">Signup</button>
+            <button onclick="forgotPassword()">Forget Password</button>
+            <div class="forgot-password">Trouble in login...</div>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value.trim();
+            if (username !== "") {
+                window.location.href = "loading.html?username=" + encodeURIComponent(username);
+            } else {
+                alert("Please enter a username to continue.");
+            }
+        }
+
+        function signup() {
+            window.location.href = "signup.html";
+        }
+
+        function forgotPassword() {
+            window.location.href = "forgetpassword.html";
+        }
+    </script>
+</body>
+</html>

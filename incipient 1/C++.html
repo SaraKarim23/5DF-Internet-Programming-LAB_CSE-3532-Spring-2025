@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++</title>
+      <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      
+        <link rel="stylesheet" href="style.css">
+
+        
+
+</head>
+<nav class="navbar navbar-expand-md navbar bg-dark border-bottom border-body p-3" data-bs-theme="dark">
+    <div class="container-fluid ">
+      <a class="navbar-brand fs-1" href="#"><span class="text-primary">C++</span> Langauge </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html" class="home1">home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="page4.html">Sign in</a>
+          </li>
+          
+      </div>
+    </div>
+  </nav>
+  <br>
+
+  
+
+<body id="body">
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Back</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="string.html">Next</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Topics
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#intro">Introduction</a></li>
+                  <li><a class="dropdown-item" href="#syn">Syntax & Statement</a></li>
+                  <li><a class="dropdown-item" href="#cmnt">Comment</a></li>
+                  <li><a class="dropdown-item" href="#vari">Variable & Data Type</a></li>
+                  <li><a class="dropdown-item" href="string.html">String</a></li>
+                  <li><a class="dropdown-item" href="if-else.html">If-Else,Switch-Case</a></li>
+                  <li><a class="dropdown-item" href="loop.html">Loop</a></li>
+                  <li><a class="dropdown-item" href="Array.html">Array</a></li>
+                  <li><a class="dropdown-item" href="function.html">Function</a></li>
+                  <li><a class="dropdown-item" href="classes.html">C++ Classes</a></li>
+                </ul>
+              </li>  
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <!--end navbar--> 
+
+     <!--Topic start-->
+     <div id="intro" class="my-4 text-white">
+     <div id="introduction">
+        <h4 class="a1">C++ Introduction</h4>
+        <p class="pp1">C++ is a widely-used programming language that builds on the foundation of C. It was introduced by Bjarne Stroustrup in the 1980s to support both procedural and object-oriented programming. Known for its speed and control over system resources, C++ is often chosen for applications where performance really matters—like operating systems, game engines, and embedded systems. Its ability to combine low-level programming with high-level abstraction makes it a versatile tool for developers.</p>
+        <p>To start C++, you need two things: 
+            <br>
+            1.A text editor, like Notepad, to write C++. <br>
+            2.A compiler, like GCC, to translate the C++ code into a language that the computer will understand.
+        </p>
+     </div>
+
+     <div id="syn">
+        <h4 class="a1">Syntax</h4>
+        <h6>Example Code-</h6>
+        <div class="a21">
+                <div class="code-box">
+                    #include &lt;iostream&gt;<br>
+                    using namespace std;<br><br>
+                    int&nbsp;main()<br>
+                    {<br>
+                    &nbsp;&nbsp;cout &lt;&lt; "Hello World!";<br>
+                    &nbsp;&nbsp;return 0;<br>
+                    }
+                      </div>
+        </div> 
+
+        
+            <h5>Explanation-</h5>
+            <p class="explanation">
+                <h6>#include &lt;iostream&gt;:</h6>
+                This line includes the input-output stream library so we can use functions like <code>cout</code> to print output.
+            </p>
+            
+              <p class="explanation">
+                <h6>using namespace std; :</h6>
+                This allows us to use standard library functions (like <code>cout</code>) without writing <code>std::</code> every time.
+              </p>
+            
+              <p class="explanation">
+                <h6>int main() :</h6>
+                This is the starting point of every C++ program. The code inside this function will run when the program starts.
+              </p>
+            
+              <p class="explanation">
+                <h6>cout &lt;&lt; "Hello World!"; :</h6>
+                This prints the text <code>Hello World!</code> on the screen using the standard output stream.
+              </p>
+            
+              <p class="explanation">
+                <h6>return 0; :</h6>
+                This ends the main function and returns the value 0 to indicate successful execution of the program.
+              </p>
+
+              <p class="explanation">
+                <h6>Statements:</h6>
+              <p>In a programming language, these programming instructions are called statements.It is important that you end the statement with a semicolon ";" .
+                 <br>
+                If you forget the semicolon (;), an error will occur and the program will not run.</p>
+            </p>
+     </div>
+
+     <div id="cmnt">
+        <h4 class="a1"> Comment</h4>
+        <p class="pp1">Comments are used to explain the code, making it easier to understand for others or for yourself when you revisit it later. They are ignored by the compiler, meaning they don’t affect how the program runs.</p> 
+       <h6>Types of comment:</h6>
+       <p>1.Single-line Comment:
+        <li>Starts with //</li>
+        <li>Used for short note or explanatin</li>
+       </p>
+       <p>2.Multi-line Comment:
+        <li>Start with /* and ends with */</li>
+        <li>Used for longer explanations or disabling blocks of code.</li>
+       </p>
+       <h6>Example-1:</h6>
+       <div class="a21">
+        <div class="code-box">
+            <p>// This is comment</p>
+            &nbsp;&nbsp;cout &lt;&lt; "Hello World!";<br>
+            &nbsp;&nbsp;return 0;<br>
+            }
+        </div>
+      </div> 
+
+      <h6>Example-2:</h6>
+       <div class="a21">
+        <div class="code-box">
+            <p>/* This is  <br>
+             Multiple line <br>comment */</p>
+            &nbsp;&nbsp;cout &lt;&lt; "Hello World!";<br>
+            &nbsp;&nbsp;return 0;<br>
+            }
+        </div>
+      </div> 
+
+     </div>
+
+     <div id="vari">
+        <h4 class="a1">Variable & Data Type</h4> 
+        <h5>Variable:</h5>
+        <p class="pp1">A variable is like a container in memory where you can store some data, give it a name, and use it later in your program. In C++, you must always declare a variable before using it, which means telling the program what type of data it will hold.
+        </p>
+        <h6>Example-</h6>
+        <div class="a21">
+            <div class="code-box">
+              int age =20;
+            </div>
+          </div> 
+        <p>Here-
+            <li>int - is the data type, which means the variable will store an integer.</li>
+            <li>age - is the name of the variable.</li>
+            <li>20 - is the value assigned to variable age.</li>
+        </p>
+        
+        <h5>Data Type:</h5>
+        <p class="pp1">Data types define what kind of data a variable can store.
+         When you create a variable, you need to tell the compiler what type of data it will hold—like numbers, characters, or true/false values.
+         This helps the program use memory efficiently and avoid errors.</p>
+        <h6>Common Data Types in C++:</h6>
+        <li>int (2 or 4 bytes) – for whole numbers (like 5, -3, 100)</li>
+        <li>float(4 bytes)/ double (8 bytes)– for decimal numbers (like 3.14, -0.99)</li>
+        <li>char (1 byte) – for single characters (like 'A', 'z')</li>
+        <li>string (Not fixed) – for text (requires #include &lt;string&gt;)</li>
+        <li>bool (1 byte) – for true or false values</li>
+
+     </div>
+
+    </div> 
+
+    <!--custom js link-->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>

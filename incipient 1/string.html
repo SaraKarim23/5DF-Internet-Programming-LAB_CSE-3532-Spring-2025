@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body id="body">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <h1 class="navbar-brand" href="#">C++</h1>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="C++.html">Back</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="if-else.html">Next</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Topics
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="C++.html">Introduction</a></li>
+                  <li><a class="dropdown-item" href="C++.html">Syntax & Statement</a></li>
+                  <li><a class="dropdown-item" href="C++.html">Comment</a></li>
+                  <li><a class="dropdown-item" href="C++.html">Variable & Data Type</a></li>
+                  <li><a class="dropdown-item" href="string.html">String</a></li>
+                  <li><a class="dropdown-item" href="if-else.html">If-Else,Switch-Case</a></li>
+                  <li><a class="dropdown-item" href="loop.html">Loop</a></li>
+                  <li><a class="dropdown-item" href="Array.html">Array</a></li>
+                  <li><a class="dropdown-item" href="function.html">Function</a></li>
+                  <li><a class="dropdown-item" href="classes.html">C++ Classes</a></li>
+                </ul>
+              </li>  
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+      <!--end navbar-->
+
+      <!--Topic start-->
+      <div id="intro" class="my-4 text-white">
+        <div id="string">
+        <h4 class="a1">String</h4>
+        <p>String is used to store and work with text—like words, sentences, or even whole paragraphs. Unlike character arrays (char[]), the string type from the C++ Standard Library (#include &ltstring&gt) is much more flexible and easier to use.</p>
+         <h5>Example:</h5>
+         <div class="a21">
+            <div class="code-box">
+                #include &lt;iostream&gt;
+                #include &lt;string&gt; <br>
+                using namespace std; <br>
+                
+                int main() <br>
+                { <br>
+                    string name = "Ayesha"; <br>
+                    cout &lt;&lt; name; <br>
+                    return 0; <br>
+                }
+                  </div>
+         </div>
+         <p>In the example above, we created a string named name that holds the value "Ayesha".</p>
+         <h5>Key Features of C++ Strings:</h5>
+         <li>You can easily check the length using .length() or .size()</li>
+         <li>Strings support many helpful functions like .substr(), .find(), .append(), etc.</li>
+         <li>You can combine strings using the + operator</li> <br>
+         <h5>String Concatenation</h5>
+         <p>The + operator can be used between strings to add them together to make a new string. This is called concatenation.</p>
+         <h6>Example:</h6>
+         <div class="a21">
+            <p class="code-box">
+                string first = "Hello"; <br>
+                string second = "World"; <br>
+                string result = first + " " + second; <br> // result = "Hello World"
+
+            </p>
+         </div>
+         <h5>String Length</h5>
+         <p>To get the length of a string, we use the length() function.</p>
+         <h6>Example:</h6>
+         <div class="a21">
+            <p class="code-box">
+                string x = "Hello"; <br>
+                cout<<"Length of the string is:" << x.length();
+
+            </p>
+         </div>
+         <h5>Acces of String</h5>
+         <p>You can access the characters in a string by referring to its index number inside square brackets [ ].</p>
+         <h6>Example:</h6>
+         <p>Access of first string-</p>
+         <div class="a21">
+            <p class="code-box">
+                string x = "Hello"; <br>
+                cout<< x[0];
+            </p>
+         </div>
+         <h5>User input String</h5>
+         <h6>Example:</h6>
+         <div class="a22">
+            <p class="code-box">
+                string first_name; <br>
+                cout << "first name: "; <br>
+                cin >> first_name; <br>
+                 // get user input from the keyboard <br>
+               cout << "Your name is: " << first_name; <br>
+                <br>
+               // Type your first name: John <br>
+               // Your name is: John
+            </p>
+        </div>
+        <p>Using getline( ) function -</p>
+        <div class="a22">
+            <p class="code-box">
+                string Full_Name; <br>
+                cout << "Full Name: "; <br>
+                getline (cin, Full_Name); <br>
+                cout << "Your name is: " << Full_Name; <br>
+                <br>
+               // Full Name: John Doe <br>
+              // Your name is: John Doe
+            </p>
+        </div>
+
+
+        </div>
+
+      </div>
+
+    
+     <!--custom js link-->
+     <script src="script.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+         crossorigin="anonymous"></script>
+
+</body>
+</html>

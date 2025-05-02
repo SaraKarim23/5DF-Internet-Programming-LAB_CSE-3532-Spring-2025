@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Customer - Travel Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-container {
+      width: 45%;
+    }
+
+    h2 {
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .gender-options {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #005599;
+    }
+
+    .image-container {
+      width: 50%;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Add Customer</h2>
+
+    <label>Username</label>
+    <input type="text" id="username" readonly>
+
+    <label>Id</label>
+    <select id="idType">
+      <option>Passport</option>
+      <option>Adhar Card</option>
+      <option>Pan Card</option>
+      <option>Ration Card</option>
+    </select>
+
+    <label>Number</label>
+    <input type="text" id="number">
+
+    <label>Name</label>
+    <input type="text" id="name" readonly value="Shahrukh Khan">
+
+    <label>Gender</label>
+    <div class="gender-options">
+      <label><input type="radio" name="gender" value="Male"> Male</label>
+      <label><input type="radio" name="gender" value="Female"> Female</label>
+    </div>
+
+    <label>Country</label>
+    <input type="text" id="country">
+
+    <label>Address</label>
+    <input type="text" id="address">
+
+    <label>Email</label>
+    <input type="email" id="email">
+
+    <label>Phone</label>
+    <input type="text" id="phone">
+
+    <button onclick="submitForm()">Add</button>
+    <button onclick="goBack()">Back</button>
+  </div>
+
+  <div class="image-container">
+    <img src="icons/newcustomer.jpg" alt="New Customer">
+  </div>
+
+  <script>
+    // Load username from query string
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get('username') || "shahrukh";
+    document.getElementById('username').value = username;
+
+    function submitForm() {
+      const id = document.getElementById("idType").value;
+      const number = document.getElementById("number").value;
+      const name = document.getElementById("name").value;
+      const gender = document.querySelector('input[name="gender"]:checked')?.value;
+      const country = document.getElementById("country").value;
+      const address = document.getElementById("address").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+
+      if (!gender) {
+        alert("Please select gender.");
+        return;
+      }
+
+      const customerData = {
+        username, id, number, name, gender, country, address, email, phone
+      };
+
+      console.log("Customer added:", customerData);
+      alert("Customer Details Added Successfully");
+    }
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+
+</body>
+</html>

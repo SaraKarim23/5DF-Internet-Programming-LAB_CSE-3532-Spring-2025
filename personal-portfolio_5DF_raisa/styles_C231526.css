@@ -511,3 +511,44 @@ footer {
         padding: 3rem 1rem; /* Adjust padding for smaller screens */
     }
 }
+
+
+@media (max-width: 480px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  nav .right {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  nav .right a {
+    margin: 0.3rem 0;
+  }
+
+  #about-section .bio p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .project-box {
+    flex: 0 0 90%;
+    margin: 0 auto;
+  }
+
+  .swiper-slide {
+    width: 90% !important;
+  }
+
+  .project-box img {
+    height: auto;
+  }
+
+  #skills-section i {
+    font-size: 1.3rem;
+  }
+}

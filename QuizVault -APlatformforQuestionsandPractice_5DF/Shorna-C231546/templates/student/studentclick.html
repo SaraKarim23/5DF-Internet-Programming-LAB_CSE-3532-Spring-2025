@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Welcome Student</title>
+
+  <style>
+    /* Styling for the jumbotron */
+    .jumbotron {
+      background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+      color: white;
+      padding: 80px 20px;
+      margin-bottom: 0;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .jumbotron h1 {
+      font-size: 3.5em;
+      font-weight: bold;
+    }
+
+    .jumbotron p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .jumbotron .btn {
+      margin: 10px;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      border-radius: 25px;
+      transition: 0.3s ease;
+    }
+
+    .jumbotron .btn-primary {
+      background-color: #17a2b8;
+      border-color: #17a2b8;
+    }
+
+    .jumbotron .btn-primary:hover {
+      background-color: #138496;
+      border-color: #138496;
+    }
+
+    .footer {
+      background-color: #212529;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+
+{% include "quiz/navbar.html" %}
+
+<!-- Jumbotron Section -->
+<div class="jumbotron">
+  <h1 class="display-4">Hello, Student!</h1>
+  <p class="lead">Welcome to Online Quiz</p>
+  <hr class="my-4">
+  <p>Access a variety of quizzes and track your progress after you login or create an account.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="studentsignup" role="button">Create Your Account</a>
+    <a class="btn btn-primary btn-lg" href="studentlogin" role="button">Login</a>
+  </p>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2025 Online Quiz. All rights reserved.</p>
+</footer>
+
+{% include "quiz/footer.html" %}
+
+</body>
+
+</html>

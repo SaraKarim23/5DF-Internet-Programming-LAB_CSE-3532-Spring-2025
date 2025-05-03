@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css"> 
+</head>
+<body>
+
+  <header class="dashboard-header">
+    <h1>Welcome, Arpita!</h1>
+    <nav class="dashboard-nav">
+      <a href="#"><i class="fas fa-home"></i> Home</a>
+      <a href="wallet.html"><i class="fas fa-wallet"></i> Wallet</a>
+      <a href="market.html"><i class="fas fa-chart-line"></i> Market</a>
+      <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+      <a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </nav>
+  </header>
+
+  <section class="dashboard-content">
+    <div class="account-overview">
+      <h2>Account Overview</h2>
+      <p>Balance: <strong>$10,000</strong></p>
+      <p>Recent Transactions: <a href="view.html" target="_blank">View</a></p>
+    </div>
+
+    <div class="market-prices">
+      <h2>Market Prices</h2>
+      <p>Bitcoin: <strong>Depends on daily market</strong></p>
+      <p>Ethereum: <strong>Depends on daily market</strong></p>
+    </div>
+
+    <div class="quick-actions">
+      <h2>Quick Actions</h2>
+      <button class="buy-btn" onclick="openModal('buyCryptoModal')">Buy Crypto</button>
+      <button class="sell-btn" onclick="openModal('sellCryptoModal')">Sell Crypto</button>
+    </div>
+  </section>
+
+  <!-- Buy Crypto Modal -->
+  <div id="buyCryptoModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('buyCryptoModal')">&times;</span>
+      <h2>Buy Crypto</h2>
+      <label>Select Cryptocurrency:</label>
+      <select id="buyCryptoSelect">
+        <option value="bitcoin">Bitcoin</option>
+        <option value="ethereum">Ethereum</option>
+      </select>
+      
+      <label>Amount (USD):</label>
+      <input type="number" id="buyAmount" placeholder="Enter amount">
+
+      <button onclick="processTransaction('buy')">Confirm Buy</button>
+      <a href="buy.html"><button>More Options</button></a>
+    </div>
+  </div>
+
+  <!-- Sell Crypto Modal -->
+  <div id="sellCryptoModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('sellCryptoModal')">&times;</span>
+      <h2>Sell Crypto</h2>
+      <label>Select Cryptocurrency:</label>
+      <select id="sellCryptoSelect">
+        <option value="bitcoin">Bitcoin</option>
+        <option value="ethereum">Ethereum</option>
+      </select>
+      
+      <label>Amount (USD):</label>
+      <input type="number" id="sellAmount" placeholder="Enter amount">
+
+      <button onclick="processTransaction('sell')">Confirm Sell</button>
+      <a href="sell.html"><button>More Options</button></a>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+
+</body>
+</html>
+

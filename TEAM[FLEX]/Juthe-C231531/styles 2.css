@@ -1,0 +1,77 @@
+
+body {
+  background-image: url('back 1.webp');
+  background-size:-150%; 
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed; 
+  color: white; 
+}
+
+header {
+  text-align: center;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.5); 
+}
+
+
+.about-section {
+  background-color: rgba(5, 4, 4, 0.3); 
+  padding:30px;
+  border-radius: 10px;
+}
+
+
+footer {
+  background-color: rgba(0, 0, 0, 0.5); 
+  padding: 20px;
+  text-align: center;
+}
+
+
+.team-photo {
+  width: 200px;
+  height: 200px; 
+  border-radius: 70%; 
+  object-fit: cover; 
+  margin: 10px; 
+
+}
+.team-member {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.team-member p {
+  margin-top: 10px;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.navbar a {
+  color: white; 
+  font-size: 30px; 
+  text-decoration: none; 
+  transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+  transform: scale(1.2); 
+}
+
+.about-section ul li {
+  font-size: 1.2em; 
+  line-height: 1.8; 
+}
+
+
+.about-section ul li strong {
+  font-size: 1.4em; 
+  font-weight: bold; 
+}

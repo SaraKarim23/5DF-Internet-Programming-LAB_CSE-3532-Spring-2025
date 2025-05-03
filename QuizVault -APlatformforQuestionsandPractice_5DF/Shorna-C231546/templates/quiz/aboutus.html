@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>About Us - Let's Quiz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <style>
+    /* General Body and Section Styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    .about-us {
+      background: linear-gradient(to right, rgba(23,162,184,0.7), rgba(23,162,184,0.3)), url("{% static 'images/about-bg.jpg' %}") no-repeat center center;
+      background-size: cover;
+      color: #120202;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .about-us h2 {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .about-us p {
+      font-size: 1.2em;
+      line-height: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .about-us .btn-info {
+      background-color: #17a2b8;
+      color: white;
+      font-size: 1.1em;
+      padding: 12px 35px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .about-us .btn-info:hover {
+      background-color: #138496;
+    }
+
+    .about-content {
+      padding: 40px 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 40px;
+      text-align: left;
+    }
+
+    .about-content h3 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .about-content p {
+      font-size: 1.1em;
+      line-height: 1.6em;
+    }
+  </style>
+</head>
+
+<body>
+{% include "quiz/navbar.html" %}
+
+<!-- About Us Section -->
+<section class="about-us">
+  <div class="container">
+    <h2>About the IIUC Quiz Portal</h2>
+    <p>Welcome to the official quiz portal of International Islamic University Chittagong (IIUC). This platform is designed to enhance the learning experience of students through interactive, curriculum-aligned quizzes.Whether you're preparing for exams, reinforcing classroom learning, or encouraging peer competition, the IIUC Quiz Portal offers a structured and engaging way to assess and improve your academic performance.
+    <p><strong>Begin your academic journey with us:</strong></p>
+    <a href="/" class="btn btn-info btn-lg">Go to Home</a>
+  </div>
+</section>
+
+<!-- About Content Section -->
+<section class="about-content">
+  <div class="container">
+    <h3>Our Mission</h3>
+    <p>Our mission is to provide IIUC students and faculty with a dedicated digital space for academic assessment through quizzes. We aim to support knowledge retention, exam readiness, and subject mastery by making self-evaluation convenient and engaging.</p>
+
+    <h3>Our Vision</h3>
+    <p>We envision the IIUC Quiz Portal as an essential academic resource across all faculties—empowering students to learn independently, assisting teachers in evaluating performance, and fostering a competitive yet collaborative academic environment.</p>
+  </div>
+</section>
+
+
+{% include "quiz/footer.html" %}
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Project</title>
+  <style>
+    body {
+      font-family: "Raleway", sans-serif;
+      background-color: #f7f9fc;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+    }
+
+    .about-container {
+      width: 90%;
+      max-width: 600px;
+      background-color: #ffffff;
+      margin-top: 40px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      color: #d40000;
+      margin-bottom: 20px;
+    }
+
+    .text-content {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+      max-height: 300px;
+      overflow-y: auto;
+      padding-right: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      background-color: #fdfdfd;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="about-container">
+    <h1>About Project</h1>
+    <div class="text-content">
+      <p><strong>About Projects</strong></p>
+      <p>
+        The objective of the Travel and Tourism Management System project is to develop a system that automates the processes and activities of a travel agency. The purpose is to design a system using which one can perform all operations related to traveling.
+      </p>
+      <p>
+        This application will help in accessing information related to the travel destination with great ease. Users can track their tour information efficiently. The travel agency information can also be obtained through this application.
+      </p>
+      <p><strong>Advantages of Project:</strong></p>
+      <ul>
+        <li>Gives accurate information</li>
+        <li>Simplifies the manual work</li>
+        <li>Minimizes documentation-related work</li>
+        <li>Provides up-to-date information</li>
+        <li>Friendly environment with warning messages</li>
+        <li>Travelers’ details can be managed</li>
+        <li>Booking confirmation notifications</li>
+      </ul>
+    </div>
+
+    <div class="button-container">
+      <button onclick="goBack()">Exit</button>
+    </div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get('username') || "shahrukh";
+
+    function goBack() {
+      window.location.href = `Dashboard.html?username=${encodeURIComponent(username)}`;
+    }
+  </script>
+
+</body>
+</html>

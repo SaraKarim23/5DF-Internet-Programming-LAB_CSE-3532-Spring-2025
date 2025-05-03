@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+    
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body id="body">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <h1 class="navbar-brand" href="#">C++</h1>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="if-else.html">Back</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Array.html">Next</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Topics
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="C++.html">Introduction</a></li>
+                  <li><a class="dropdown-item" href="C++.html">Syntax & Statement</a></li>
+                  <li><a class="dropdown-item" href="C++.html">Comment</a></li>
+                  <li><a class="dropdown-item" href="C++.html">Variable & Data Type</a></li>
+                  <li><a class="dropdown-item" href="string.html">String</a></li>
+                  <li><a class="dropdown-item" href="if-else.html">If-Else,Switch-Case</a></li>
+                  <li><a class="dropdown-item" href="loop.html">Loop</a></li>
+                  <li><a class="dropdown-item" href="Array.html">Array</a></li>
+                  <li><a class="dropdown-item" href="function.html">Function</a></li>
+                  <li><a class="dropdown-item" href="classes.html">C++ Classes</a></li>
+                </ul>
+              </li>  
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+      <!--end navbar-->
+
+      <!--Topic start-->
+      <div id="intro" class="my-4 text-white" >
+        <div id="loop">
+            <h4 class="a1">Loop</h4>
+            <p>Loops allow you to repeat a block of code multiple times as long as a certain condition remains true.</p>
+            <p>They’re especially useful because they help avoid repetition, minimize mistakes, and make programs easier to read and manage.</p>
+            <br>
+            <h5>For Loop</h5>
+            <p>A for loop is perfect when you already know how many times you want a piece of code to run. It keeps everything in one line—initialization, condition check, and update—making it short and neat.
+            </p>
+            <h6>Basic Structure</h6>
+            <div class="a23">
+                <div class="code-box">
+                    for (initialization; condition; update) { <br>
+                        // code to run repeatedly
+                      }
+                </div>
+            </div>
+            <h6>Example -</h6>
+            <div class="a23">
+                <div class="code-box">
+                    for (int i = 1; i <= 5; i++) { <br>
+                        cout << i << " "; <br>
+                    }
+                </div>
+            </div> 
+            <br>
+            <h5>Nested Loops</h5>
+            <p>Loop inside another loop is called a nested loop.</p>
+            <h6>Example -</h6>
+            <div class="a23">
+                <div class="code-box">
+                        int main() { <br>
+                            for (int i = 1; i <= 3; i++) { <br>          // Outer loop
+                                for (int j = 1; j <= 5; j++) { <br>     // Inner loop
+                                    cout << "* "; <br>
+                                } <br>
+                                cout << endl; // Moves to the next line after each row <br>
+                            } <br>
+                            return 0; <br>
+                        }
+                </div>
+            </div> 
+            <br> 
+            <h5>While Loop</h5>
+            <p>Keep Running... As Long As the Condition Is True.</p>
+            <p>The while loop is used when you don’t know exactly how many times the code needs to run. It simply checks the condition before every iteration and runs the block only if the condition is true.</p>
+            <h6>Basic Structure</h6>
+            <div class="a23">
+                <div class="code-box">
+                    while (condition) { <br>
+                        // code to repeat <br>
+                    }
+                </div>
+            </div>
+            <h6>Example -</h6>
+            <div class="a23">
+                <div class="code-box">
+                    int count = 1; <br> <br>
+                    while (count <= 5) { <br>
+                        cout << count << " "; <br>
+                        count++; <br>
+                    }
+                </div>
+            </div> <br>
+            <h5>do while Loop</h5>
+            <p>Runs At Least Once—No Matter What! </p> 
+            <p>Do while is a variant of the while loop.The do-while loop is a bit different from other loops. It always executes the code block first, and checks the condition afterward. So, even if the condition is false from the start, the code inside will run at least once.</p>
+            <h6>Basic Structure</h6>
+            <div class="a23">
+                <div class="code-box">
+                    do { <br>
+                      // code to execute  <br>
+                    } while (condition); <br>
+                </div>
+            </div>
+            <h6>Example -</h6>
+            <div class="a23">
+                <div class="code-box">
+                    int i = 1; <br> <br>
+                    do { <br>
+                        cout << i << " "; <br>
+                        i++; <br>
+                    } while (i <= 5); <br>
+                </div>
+            </div> <br>
+
+
+        </div>
+
+      </div>
+
+     <!--custom js link-->
+   <script src="script.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+       crossorigin="anonymous"></script> 
+</body>
+</html>

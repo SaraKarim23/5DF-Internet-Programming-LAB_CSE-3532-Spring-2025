@@ -108,7 +108,8 @@ const Row1 = () => {
         style={{ gridArea: "a" }}
       >
         <div className="pt-5">
-          <h1 className="text-white text-md font-semibold">Revenue and Expenses</h1>
+          {/* <h1 className="text-white text-md font-semibold">Revenue and Expenses</h1> */}
+          <h1 className="text-white text-md font-semibold">Pure and Polluted Water Level</h1>
         </div>
         <div className="text-zinc-400 text-sm">
           Top line represents revenue, bottom line represents expenses
@@ -181,7 +182,8 @@ const Row1 = () => {
         style={{ gridArea: "b" }}
       >
         <div className="pt-5">
-          <h1 className="text-white text-md font-semibold">Profit and Revenue</h1>
+          {/* <h1 className="text-white text-md font-semibold">Profit and Revenue</h1> */}
+          <h1 className="text-white text-md font-semibold">Pure Water and Polluted Water Rate</h1>
         </div>
         <div className="text-zinc-400 text-sm">
           Top line represents revenue, bottom line represents profit
@@ -252,7 +254,8 @@ const Row1 = () => {
         style={{ gridArea: "c" }}
       >
         <div className="pt-5">
-          <h1 className="text-white text-md font-semibold">Revenue Month by Month</h1>
+          {/* <h1 className="text-white text-md font-semibold">Revenue Month by Month</h1> */}
+          <h1 className="text-white text-md font-semibold">Pollution Month by Month</h1>
         </div>
         <div className="text-zinc-400 text-sm">
           Graph representing the revenue month by month

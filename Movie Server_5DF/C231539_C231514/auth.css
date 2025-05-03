@@ -1,0 +1,88 @@
+/* auth.css — Login/Register Styling with Animation */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+  }
+  
+  .auth-form {
+    background-color: #1c1c1c;
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
+    animation: fadeInUp 0.8s ease;
+  }
+  
+  .auth-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e50914;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 25px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 14px;
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    transition: border 0.3s;
+  }
+  
+  .input-group input:focus {
+    border-color: #e50914;
+  }
+  
+  .input-group label {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.3s;
+  }
+  
+  .input-group input:focus + label,
+  .input-group input:not(:placeholder-shown) + label {
+    top: -8px;
+    left: 10px;
+    background-color: #1c1c1c;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #e50914;
+  }
+  
+  .switch-link {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .switch-link a {
+    color: #e50914;
+    text-decoration: underline;
+  }
+  
+  /* Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

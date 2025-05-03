@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Server — Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="auth.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">MovieServer</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
+
+  <div class="auth-container">
+    <form class="auth-form" id="login-form">
+      <h2>Login</h2>
+      <div class="input-group">
+        <input type="email" id="login-email" required>
+        <label>Email</label>
+      </div>
+      <div class="input-group">
+        <input type="password" id="login-password" required>
+        <label>Password</label>
+      </div>
+      <button type="submit" class="button">Login</button>
+      <p class="switch-link">Don't have an account? <a href="register.html">Register here</a></p>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-password').value.trim();
+
+      // Hardcoded fake user credentials
+      const fakeUser = {
+        email: 'tannaprome@gmail.com',
+        password: '123456'
+      };
+
+      if (email === fakeUser.email && password === fakeUser.password) {
+        alert('Login successful!');
+        window.location.href = 'index.html'; // Redirect to home page (index.html)
+      } else {
+        alert('Invalid email or password.\nUse:\nEmail: tannaprome.com\nPassword: 123456');
+      }
+    });
+  </script>
+
+</body>
+</html>

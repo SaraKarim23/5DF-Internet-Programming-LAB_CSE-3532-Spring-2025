@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destination Slideshow</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #e0fafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #slideshow {
+      position: relative;
+      width: 900px;
+      height: 700px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    #slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    #slideshow img.active {
+      opacity: 1;
+    }
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .back-btn:hover {
+      background-color: #0055aa;
+    }
+  </style>
+</head>
+<body>
+  <button class="back-btn" onclick="goBack()">← Back to Dashboard</button>
+
+  <div id="slideshow">
+    <img src="icons/dest1.jpeg" class="active" alt="Destination 1">
+    <img src="icons/dest2.png" alt="Destination 2">
+    <img src="icons/dest3.jpg" alt="Destination 3">
+    <img src="icons/dest4.jpg" alt="Destination 4">
+    <img src="icons/dest5.jpg" alt="Destination 5">
+    <img src="icons/dest6.jpg" alt="Destination 6">
+    <img src="icons/dest7.jpeg" alt="Destination 7">
+    <img src="icons/dest8.jpg" alt="Destination 8">
+    <img src="icons/dest9.jpg" alt="Destination 9">
+    <img src="icons/dest10.jpg" alt="Destination 10">
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('#slideshow img');
+    let current = 0;
+
+    function showNextImage() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }
+
+    setInterval(showNextImage, 2800);
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get('username') || "shahrukh";
+
+    function goBack() {
+      window.location.href = `Dashboard.html?username=${encodeURIComponent(username)}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper{
+    padding: 1%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+.tbl-full{
+    width: 100%;
+}
+.tbl-30{
+    width: 30%;
+}
+
+table tr th{
+    border-bottom: 1px solid black;
+    padding: 1%;
+    text-align: left;
+}
+
+table tr td{
+    padding: 1%;
+}
+
+.btn-primary{
+    background-color: #1e90ff;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-primary:hover{
+    background-color: #3742fa;
+}
+
+.btn-secondary{
+    background-color: #7bed9f;
+    padding: 1%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-secondary:hover{
+    background-color: #2ed573;
+}
+
+.btn-danger{
+    background-color: #370791;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.btn-danger:hover{
+    background-color: #ff47b8;
+}
+
+.success{
+    color: #2ed573;
+}
+.error{
+    color: #ff4757;
+}
+
+
+/* CSS for Menu */
+.menu{
+    border-bottom: 1px solid grey;
+}
+.menu ul{
+    list-style-type: none;
+}
+.menu ul li{
+    display: inline;
+    padding: 1%;
+}
+.menu ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #0db2b8;
+}
+.menu ul li a:hover{
+    color: #f947ff;
+}
+
+/* CSS for main-content */
+.main-content{
+    background-color: #f1f2f6;
+    padding: 3% 0;
+}
+
+.col-4{
+    width: 18%;
+    background-color: white;
+    margin: 1%;
+    padding: 2%;
+    float: left;
+}
+
+
+/* CSS for Footer */
+.footer{
+    background-color: #28b6c9;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS for Login 
+.login{
+    border: 1px solid grey;
+    width: 20%;
+    margin: 10% auto;
+    padding: 2%;
+}*/
+
+
+
+
+
+/* CSS for Login */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.whole{
+    max-width: 440px;
+    padding: 0 20px;
+    margin: 170px auto;
+}
+
+.container{
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.container .title{
+    line-height: 80px;
+    background:#127087;
+    color: #fff;
+    padding-left: 50px;
+    border-radius: 5px 5px 0 0;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    padding: 0;
+}
+
+.container form{
+    padding: 30px 20px 25px 20px;
+}
+
+.container form .row{
+    height: 45px;
+    
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.container form .row input{
+    height: 100%;
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 15px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid lightgray;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+form .row input:focus{
+    border-color:#127087;
+    box-shadow: inset 0 0 2px 2px rgb(26, 188, 156, 0.25);
+}
+
+.container form .row i{
+    position: absolute;
+    width: 47px;
+    height: 100%;
+    color: #fff;
+    background:#127087;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 5px 0  0 5px;
+}
+
+.container form .bottom input{
+    border: none;
+    background: #127087;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0;
+    border: 1px solid #1e1287;
+    cursor: pointer;
+
+}
+
+form .bottom input:hover{
+    background:#127087;
+}
+
+.container form .pass{
+    margin: -8px 0 20px 0;
+    font-size: 15px;
+}
+
+
+
+.container form .pass a{
+    text-decoration: none;
+    color: #162fa0;
+}
+
+.container form .pass a:hover{
+    text-decoration: underline;
+}
+
+.container form .signup-link{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.container form .signup-link a{
+    text-decoration: none;
+    color: #162fa0;
+}
+
+.container form .signup-link a:hover{
+    text-decoration: underline;
+}
+

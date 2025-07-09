@@ -1,5 +1,7 @@
 <<<<<<< HEAD
-![Screenshot (238)](https://github.com/user-attachments/assets/363e7041-1833-4bc9-94d0-1b0ee13e2c50)
+![wq1](https://github.com/user-attachments/assets/cb023415-ac4a-4284-be11-5bc2a5ea12bd)
+![wq2](https://github.com/user-attachments/assets/897d0e64-2ba9-4a4e-8b48-017bd29a3202)
+
 # Finance Dashboard with Predictive Analytics
 
 A responsive React dashboard for monitoring the water quality. This Project is done by C223201,C223220,C231524 

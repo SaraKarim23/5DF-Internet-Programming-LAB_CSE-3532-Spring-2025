@@ -1,0 +1,94 @@
+{% extends 'quiz/adminbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Latest Bootstrap and jQuery -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style type="text/css">
+        a:link {
+            text-decoration: none;
+        }
+
+        .order-card {
+            color: rgb(255, 255, 255);
+        }
+
+        .bg-c-blue {
+            background: #04868f;
+        }
+
+        .bg-c-green {
+            background:#4C51BF;
+        }
+
+        .bg-c-yellow {
+            background: #F56565;
+        }
+
+        .bg-c-pink {
+            background: #663a30;
+        }
+
+        .card {
+            -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+            box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+            border: 1px solid black;
+            margin-bottom: 30px;
+            -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card .card-block {
+            padding: 25px;
+        }
+
+        .order-card i {
+            font-size: 26px;
+        }
+
+        .f-left {
+            float: left;
+        }
+
+        .f-right {
+            float: right;
+        }
+    </style>
+</head>
+
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-xl-6">
+            <div class="card bg-c-blue order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20"> <a href="admin-view-student" style="text-decoration: none;color:white;">Total Student</a> </h6>
+                    <h2 class="text-right"><i class="fas fa-user-graduate f-left"></i><span>{{total_student}}</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-xl-6">
+            <div class="card bg-c-green order-card">
+                <div class="card-block">
+                    <h6 class="m-b-20"><a href="admin-view-student-marks" style="text-decoration: none;color:white;">Student Marks</a> </h6>
+                    <h2 class="text-right"><i class="fas fa-sort-numeric-up f-left"></i><span>:)</span></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock content %}

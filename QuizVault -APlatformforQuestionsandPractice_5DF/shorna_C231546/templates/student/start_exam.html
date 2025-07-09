@@ -1,0 +1,77 @@
+{% extends 'student/studentbase.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+
+<div class="jumbotron my-4">
+  <!-- ✅ Timer Display -->
+  <h2 style="text-align: center; color: red;">Time Left: <span id="timer"></span></h2>
+
+  <form class="form" autocomplete="off" onsubmit="return saveAns()" action="/student/calculate-marks" method="POST" id="quizForm">
+    {% csrf_token %}
+    <h1 style="text-align: center;">{{ course.course_name }}</h1>
+
+    {% for q in questions %}
+    <h3 class="text-info">{{ forloop.counter }}. {{ q.question }}</h3>
+    <h4 style="text-align: right;">[Marks {{ q.marks }}]</h4>
+
+    <div class="form-check mx-4">
+      <input class="form-check-input" type="radio" name="{{ forloop.counter }}" value="Option1">
+      <label class="form-check-label">{{ q.option1 }}</label>
+    </div>
+
+    <div class="form-check mx-4">
+      <input class="form-check-input" type="radio" name="{{ forloop.counter }}" value="Option2">
+      <label class="form-check-label">{{ q.option2 }}</label>
+    </div>
+
+    <div class="form-check mx-4">
+      <input class="form-check-input" type="radio" name="{{ forloop.counter }}" value="Option3">
+      <label class="form-check-label">{{ q.option3 }}</label>
+    </div>
+
+    <div class="form-check mx-4">
+      <input class="form-check-input" type="radio" name="{{ forloop.counter }}" value="Option4">
+      <label class="form-check-label">{{ q.option4 }}</label>
+    </div>
+    {% endfor %}
+
+    <input class="btn btn-info btn-lg" type="submit" value="Submit">
+  </form>
+</div>
+
+<script>
+  // ✅ Get total time from Django template (convert minutes to seconds)
+  var totalTime = {{ course.total_time }} * 60;
+
+  function startTimer() {
+    var timerElement = document.getElementById("timer");
+    var form = document.getElementById("quizForm");
+
+    function updateTimer() {
+      var minutes = Math.floor(totalTime / 60);
+      var seconds = totalTime % 60;
+      timerElement.textContent = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+
+      if (totalTime <= 0) {
+        alert("Time's up! Submitting your quiz.");
+        form.submit();  // ✅ Auto-submit form
+      } else {
+        totalTime--;
+        setTimeout(updateTimer, 1000);
+      }
+    }
+
+    updateTimer();
+  }
+
+  window.onload = startTimer;  // ✅ Start timer when page loads
+</script>
+
+<br><br><br><br><br><br>
+{% endblock content %}

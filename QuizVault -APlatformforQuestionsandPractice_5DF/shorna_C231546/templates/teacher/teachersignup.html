@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+{% load widget_tweaks static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Teacher Signup</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url("{% static 'image/1.jpg' %}") no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .signup-container {
+      max-width: 700px;
+      margin: 80px auto;
+      background-color: rgba(18, 2, 2, 0.86);
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    h3 {
+      text-align: center;
+      color: #fffcfc;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    label {
+      font-weight: 500;
+      color: white;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: #17a2b8;
+      box-shadow: 0 0 5px rgba(23, 162, 184, 0.5);
+    }
+
+    ::placeholder {
+      color: rgba(100, 100, 100, 0.8);
+    }
+
+    .btn-primary {
+      background-color: #17a2b8;
+      border-color: #17a2b8;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      width: 100%;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #138496;
+    }
+
+    footer {
+      background-color: #17a2b8;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+{% include "quiz/navbar.html" %}
+
+<div class="signup-container">
+  <h3>TEACHER SIGNUP</h3>
+  <form method="POST" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <!-- Username and Password -->
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="username">Initial:</label>
+        {% render_field userForm.username|attr:'required:true' class="form-control" placeholder="Akad" %}
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Password</label>
+        {% render_field userForm.password|attr:'required:true' class="form-control" placeholder="Password" %}
+      </div>
+    </div>
+
+    <!-- First and Last Name -->
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="first_name">First Name</label>
+        {% render_field userForm.first_name|attr:'required:true' class="form-control" placeholder="First Name" %}
+      </div>
+      <div class="form-group col-md-6">
+        <label for="last_name">Last Name</label>
+        {% render_field userForm.last_name|attr:'required:true' class="form-control" placeholder="Last Name" %}
+      </div>
+    </div>
+
+    <!-- Mobile and Address -->
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="mobile">Mobile</label>
+        {% render_field teacherForm.mobile|attr:'required:true' class="form-control" placeholder="Mobile" %}
+      </div>
+      <div class="form-group col-md-6">
+        <label for="address">Address</label>
+        {% render_field teacherForm.address|attr:'required:true' class="form-control" placeholder="Address" %}
+      </div>
+    </div>
+
+    <!-- Profile Picture -->
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="profile_pic">ID Proof:</label>
+        {% render_field teacherForm.profile_pic|attr:'required:true' class="form-control" %}
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+  </form>
+</div>
+
+
+
+</body>
+</html>

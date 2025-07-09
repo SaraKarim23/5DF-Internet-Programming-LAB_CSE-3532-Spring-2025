@@ -1,0 +1,63 @@
+{% extends 'teacher/teacherbase.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        a:link {
+            text-decoration: none;
+        }
+
+        .hero-banner {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url("{% static 'image/addcourse.jpg' %}") center center / cover no-repeat;
+            height: 40vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-banner h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+
+<!-- Hero Section -->
+<div class="hero-banner">
+    <h2> </h2>
+</div>
+
+<!-- Form Section -->
+<form method="POST" autocomplete="off" style="margin: 100px; margin-top: 0;">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="course_name">Course Name</label>
+        {% render_field courseForm.course_name class="form-control" placeholder="Java" %}
+
+        <label for="question_number">Total Questions</label>
+        {% render_field courseForm.question_number class="form-control" placeholder="10" %}
+
+        <label for="total_marks">Total Marks</label>
+        {% render_field courseForm.total_marks class="form-control" placeholder="50" %}
+
+        <label for="total_time">Total Time (In minutes)</label>
+        {% render_field courseForm.total_time class="form-control" placeholder="30" %}
+    </div>
+
+    <button type="submit" class="btn btn-primary">ADD</button>
+</form>
+
+<br><br><br>
+{% endblock content %}

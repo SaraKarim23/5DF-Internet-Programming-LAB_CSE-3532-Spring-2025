@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Let's Quiz - Test Your Knowledge</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .jumbotron {
+      margin-bottom: 0;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("{% static 'images/quiz-bg.jpg' %}") no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 80px 20px;
+    }
+
+    .btn-custom {
+      background-color: #17a2b8;
+      color: white;
+      padding: 10px 30px;
+      font-size: 1.2em;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+      background-color: #138496;
+    }
+
+    .features {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .feature-item {
+      margin-bottom: 30px;
+    }
+
+    .feature-icon {
+      font-size: 3em;
+      color: #17a2b8;
+    }
+
+    .testimonial {
+      padding: 50px 20px;
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+{% include "quiz/navbar.html" %}
+{% load static %}
+…
+<!-- Hero Section -->
+<section id="section-jumbotron"
+         class="jumbotron d-flex justify-content-center align-items-center text-center"
+         style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url('{% static "image/bg.jpg" %}') center center / cover no-repeat;
+margin-bottom: 0; color: white;">
+
+<div class="container" style="background: rgba(0,0,0,0.5); padding: 40px; border-radius: 10px;">
+  <h1 class="display-1 text-glow"> Quiz Portal</h1>
+
+
+
+  <div class="row justify-content-center mt-3">
+    <div class="col-12 col-md-4 mb-2">
+      <a href="student/studentclick" class="btn btn-lg btn-neon w-100">
+        <i class="fa fa-sign-in-alt"></i> Student Portal
+      </a>
+    </div>
+    <div class="col-12 col-md-4 mb-2">
+      <a href="teacher/teacherclick" class="btn btn-lg btn-neon w-100">
+        <i class="fa fa-chalkboard-teacher"></i> Teacher Portal
+      </a>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<style>
+  /* Background and General Styling */
+  #section-jumbotron {
+    margin-bottom: 0;
+    background: radial-gradient(circle, rgba(0,0,0,0.8) 20%, rgba(23,162,184,0.3) 80%);
+    color: white;
+    padding: 80px 20px;
+    border-bottom: 2px solid #17a2b8;
+    box-shadow: 0px 0px 20px rgba(23, 162, 184, 0.5);
+  }
+
+  /* Glowing Text Effect */
+  .text-glow {
+    text-shadow: 0 0 10px #17a2b8, 0 0 20px #17a2b8, 0 0 40px #17a2b8;
+  }
+
+  /* Neon Glow Button */
+  .btn-neon {
+    background-color: transparent;
+    border: 2px solid #17a2b8;
+    color: #17a2b8;
+    padding: 12px 35px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  .btn-neon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #17a2b8;
+    transition: 0.3s ease-in-out;
+    z-index: -1;
+  }
+
+  .btn-neon:hover::before {
+    left: 0;
+  }
+
+  .btn-neon:hover {
+    color: white;
+    box-shadow: 0 0 10px #17a2b8, 0 0 20px #17a2b8;
+  }
+</style>
+
+
+<section class="features">
+  <div class="container">
+    <h2 class="text-center">Why Use the SmartVault Quiz Portal?</h2>
+    <br>
+    <div class="row">
+      <div class="col-md-4 feature-item">
+        <i class="fa-solid fa-lightbulb feature-icon"></i>
+        <h4>Expand Academic Knowledge</h4>
+        <p>Participate in department-wise quizzes to deepen your understanding of course materials and concepts.</p>
+      </div>
+      <div class="col-md-4 feature-item">
+        <i class="fa-solid fa-check-circle feature-icon"></i>
+        <h4>Assess Your Learning</h4>
+        <p>Evaluate your preparation for exams by testing yourself with quizzes aligned with IIUC's curriculum.</p>
+      </div>
+      <div class="col-md-4 feature-item">
+        <i class="fa-solid fa-bolt feature-icon"></i>
+        <h4>Immediate Performance Feedback</h4>
+        <p>Get instant results with detailed explanations to identify strengths and improve weak areas efficiently.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="testimonial">
+  <div class="container">
+    <h2 class="text-center">What Our Users Say</h2>
+    <p class="lead">"The IIUC Quiz Portal has made it easier to prepare for my exams and stay ahead in class." - <strong>Fatima N., CSE Department</strong></p>
+    <p class="lead">"As a faculty member, I find the portal incredibly helpful to assess student progress efficiently." - <strong>Dr. Kamal Hossain, Faculty of Business Studies</strong></p>
+  </div>
+</section>
+
+
+{% include "quiz/footer.html" %}
+
+</body>
+
+</html>

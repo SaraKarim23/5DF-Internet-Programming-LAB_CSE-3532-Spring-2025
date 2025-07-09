@@ -1,0 +1,128 @@
+{% extends 'student/studentbase.html' %}
+{% block content %}
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap & Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url("{% static 'image/texam.jpg' %}") center center/cover no-repeat;
+            height: 50vh;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-banner h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .exam-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .exam-card h4 {
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .exam-card ul {
+            padding-left: 20px;
+        }
+
+        .exam-card ul li {
+            margin-bottom: 10px;
+        }
+
+        .btn-start {
+            background-color: #17a2b8;
+            color: white;
+            padding: 12px 30px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .btn-start:hover {
+            background-color: #138496;
+            color: #fff;
+        }
+
+        .card-footer {
+            background-color: #e9ecef;
+            font-weight: 500;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #dee2e6;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .icon {
+            color: #17a2b8;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<!-- Hero Banner -->
+<div class="hero-banner">
+    <h1> </h1>
+</div>
+
+<!-- Instruction Card -->
+<div class="container">
+    <div class="exam-card mt-5 mx-auto" style="max-width: 800px;">
+        <h4 class="text-info"><i class="fas fa-info-circle icon"></i>Exam Details</h4>
+        <ul>
+            <li><strong>Exam Name:</strong> {{ course.course_name }}</li>
+            <li><strong>Total Questions:</strong> {{ total_questions }}</li>
+            <li><strong>Total Marks:</strong> {{ total_marks }}</li>
+            <li><strong>Total Time:</strong> {{ course.total_time }} Minutes</li>
+        </ul>
+
+        <h4 class="text-info mt-4"><i class="fas fa-book-reader icon"></i>Rules</h4>
+        <ul>
+            <li>All questions are multiple choice.</li>
+            <li><span class="text-danger">Only one choice is correct.</span></li>
+            <li>Each question carries different marks.</li>
+            <li>Answer as quickly as possible.</li>
+            <li>If you refresh or go back, a new question will be shown, and the previous will count as attempted.</li>
+            <li>Questions are randomly displayed for each user.</li>
+            <li>You will see your marks immediately after submission.</li>
+        </ul>
+
+        <div class="text-center mt-4">
+            <a href="{% url 'start-exam' course.id %}" class="btn btn-start">
+                <i class="fas fa-play-circle"></i> Start Exam
+            </a>
+        </div>
+
+        <div class="card-footer mt-4">
+            Best of Luck!
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

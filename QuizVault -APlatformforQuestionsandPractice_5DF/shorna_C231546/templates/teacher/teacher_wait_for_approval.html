@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Account Pending Approval</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .warning-box {
+      background-color: #fff3cd;
+      border-left: 5px solid #ffc107;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 600px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .warning-box h1 {
+      color: #856404;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .warning-box p {
+      color: #856404;
+      font-size: 16px;
+    }
+
+    .btn-warning-custom {
+      background-color: #ffc107;
+      border: none;
+      color: #212529;
+      margin-top: 20px;
+    }
+
+    .btn-warning-custom:hover {
+      background-color: #e0a800;
+    }
+  </style>
+</head>
+<body>
+
+<div class="warning-box">
+  <h1>Hello {{ request.user.first_name }} 👋</h1>
+  <p>Your account is not approved yet.</p>
+  <p>Our team is currently reviewing your profile.</p>
+  <p>You will be notified once it's approved.</p>
+  <p><strong>Please check back later.</strong></p>
+  <a class="btn btn-warning-custom btn-lg" href="/logout" role="button">Logout for Now</a>
+</div>
+
+</body>
+</html>

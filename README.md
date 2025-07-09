@@ -2,30 +2,11 @@
 ![Screenshot (238)](https://github.com/user-attachments/assets/363e7041-1833-4bc9-94d0-1b0ee13e2c50)
 # Finance Dashboard with Predictive Analytics
 
-A responsive React dashboard for monitoring Key Performance Indicators (KPIs), products, transactions, and expense breakdowns — complete with data visualization and revenue prediction using linear regression.
+A responsive React dashboard for monitoring the water quality. This Project is done by C223201,C223220,C231524 
 
 ---
 
-## 🔍 Features
 
-- **Real-time Data Fetching** via Redux Toolkit Query from the following endpoints:
-  - `/kpi/kpis/`
-  - `/product/products/`
-  - `/transaction/transactions/`
-- **KPI Visualizations**
-  - Area Chart: Monthly revenue vs. expenses
-  - Line Chart: Revenue vs. profit (dual Y-axes)
-  - Bar Chart: Month-by-month revenue
-- **Tabular Views**
-  - Products: Scrollable table listing ID, expense, and price
-  - Transactions: Recent orders table with buyer and item count
-- **Expense Breakdown**
-  - Mini pie charts showing each category’s portion of total expenses
-- **Revenue Predictions**
-  - Linear regression to display trend line and forecast next year’s revenue
-- **Responsive UI** with Tailwind CSS and shadcn-style components
-
----
 
 ## 🛠 Tech Stack
 
@@ -33,7 +14,7 @@ A responsive React dashboard for monitoring Key Performance Indicators (KPIs), p
 - **State Management & Data Fetching:** Redux Toolkit Query (@reduxjs/toolkit/query)
 - **Charts:** Recharts
 - **Regression:** regression.js
-- **Backend (Mock / Strapi):** Static controllers serving JSON at `http://localhost:1338`
+- **Backend:** Static controllers serving JSON at `http://localhost:1338`
 
 ---
 
@@ -93,44 +74,6 @@ A responsive React dashboard for monitoring Key Performance Indicators (KPIs), p
 
 ---
 
-## 📐 API Endpoints & Data Format
-
-### GET `/kpi/kpis/`
-```json
-[
-  {
-    "monthlyData": [
-      { "month": "January",   "revenue": "$12,000", "expenses": "$5,000" },
-      { "month": "February",  "revenue": "$10,000", "expenses": "$4,500" },
-      …
-    ],
-    "totalExpenses": "$71,000",
-    "expensesByCategory": {
-      "salaries": "$38,000.00",
-      "supplies": "$13,000.00",
-      "services": "$10,000.00"
-    }
-  }
-]
-```
-
-### GET `/product/products/`
-```json
-[
-  { "_id": "63bf7ac9f03239e002001600", "price": "$43.41", "expense": "$5.97", … },
-  …
-]
-```
-
-### GET `/transaction/transactions/`
-```json
-[
-  { "_id": "…", "buyer": "Alice", "amount": 120.50, "productIds": [ … ] },
-  …
-]
-```
-
----
 
 ## 🔧 Available Scripts
 

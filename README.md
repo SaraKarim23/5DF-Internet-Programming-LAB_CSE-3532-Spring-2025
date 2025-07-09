@@ -53,4 +53,3 @@ Example:
 
 ### Instructor: Sara Karim
 - 💡 "Code together, learn together, and let’s build something amazing!"
->>>>>>> 280790212824ddecd0face913facc41c93eb1c60

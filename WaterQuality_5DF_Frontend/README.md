@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ![wq1](https://github.com/user-attachments/assets/cb023415-ac4a-4284-be11-5bc2a5ea12bd)
 ![wq2](https://github.com/user-attachments/assets/897d0e64-2ba9-4a4e-8b48-017bd29a3202)
 

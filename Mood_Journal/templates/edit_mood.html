@@ -1,0 +1,9 @@
+<!DOCTYPE html><html><head><title>Edit Mood</title></head><body>
+<h2>Edit Mood</h2>
+<form method="post">
+    <textarea name="content" required>{{ mood.content }}</textarea><br>
+    <label><input type="checkbox" name="is_public" {% if mood.is_public %}checked{% endif %}> Public</label><br>
+    <button type="submit">Update</button>
+</form>
+<a href="/moods">Back</a>
+</body></html>

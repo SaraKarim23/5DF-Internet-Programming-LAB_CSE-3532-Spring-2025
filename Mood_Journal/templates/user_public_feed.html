@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>{{ user.username }}'s Public Mood Feed</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+        body {
+            background: #f5f7fa;
+            font-family: 'Nunito', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #5a2a83;
+            margin-bottom: 30px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            max-width: 700px;
+        }
+
+        li {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(90, 42, 131, 0.15);
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        /* Animate each item with stagger */
+        {% for mood in moods %}
+        ul li:nth-child({{ loop.index }}) {
+            animation-delay: {{ (loop.index - 1) * 0.1 }}s;
+        }
+        {% endfor %}
+
+        strong {
+            font-size: 1.3rem;
+            color: #5a2a83;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        small {
+            color: #888;
+            font-family: monospace;
+            align-self: flex-end;
+            margin-top: 10px;
+        }
+
+        p.message-text {
+            font-size: 1.1rem;
+            color: #444;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        a {
+            margin-top: 30px;
+            text-decoration: none;
+            color: #5a2a83;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #7f4cc8;
+        }
+
+        /* Emoji styling */
+        .emoji {
+            font-size: 1.8rem;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 15px;
+            }
+            ul {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>Public Moods by {{ user.username }}</h1>
+{% if moods %}
+<ul>
+    {% set mood_emojis = {
+    'Sad': '😢',
+    'Happy': '😄',
+    'Angry': '😠',
+    'Motivated': '💪',
+    'Depressed': '😞',
+    'Romantic': '💕',
+    'Heart Broken': '💔'
+    } %}
+    {% for mood in moods %}
+    <li>
+        <strong>
+            <span class="emoji">{{ mood_emojis.get(mood.mood_type, '😊') }}</span>
+            {{ mood.mood_type }}
+        </strong>
+        {% if mood.message %}
+        <p class="message-text">{{ mood.message }}</p>
+        {% endif %}
+        <small>{{ mood.timestamp.strftime('%Y-%m-%d %H:%M') }}</small>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No public moods yet.</p>
+{% endif %}
+<a href="{{ url_for('index') }}">⬅️ Back to Home</a>
+</body>
+</html>

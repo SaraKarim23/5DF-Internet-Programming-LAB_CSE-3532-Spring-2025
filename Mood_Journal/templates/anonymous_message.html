@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><title>Send Anonymous Message</title></head><body>
+<h2>Send Anonymous Message to {{ user.username }}</h2>
+<form method="post">
+    <textarea name="content" placeholder="Write your message here..." required></textarea><br>
+    <button type="submit">Send</button>
+</form>
+<p><a href="/public">Back to Public Feed</a></p>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul style="color:green;">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+</body></html>

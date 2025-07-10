@@ -1,0 +1,32 @@
+<!-- templates/reply.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Reply to Anonymous Message</title>
+</head>
+<body>
+<h1>Reply to Anonymous Message</h1>
+
+<blockquote style="font-style: italic; background:#eee; padding:10px; border-left: 5px solid #764ba2;">
+    {{ anon_msg.content }}
+</blockquote>
+
+<form method="POST">
+    <label for="mood_type">Select your feeling:</label><br>
+    <select name="mood_type" id="mood_type" required>
+        <option value="">-- Select Mood --</option>
+        {% for mood in mood_options %}
+        <option value="{{ mood }}">{{ mood }}</option>
+        {% endfor %}
+    </select><br><br>
+
+    <label for="reply_text">Your reply:</label><br>
+    <textarea name="reply_text" id="reply_text" rows="4" cols="40" required></textarea><br><br>
+
+    <button type="submit">Post Reply Publicly</button>
+</form>
+
+<br><a href="{{ url_for('public_feed', user_id=session['user_id']) }}">Back to Public Feed</a>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Public Mood & Reply Feed</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: white;
+            font-weight: 700;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            box-sizing: border-box;
+        }
+
+        .feed-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            margin-bottom: 15px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .feed-item:last-child {
+            border-bottom: none;
+        }
+
+        .feed-type {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .username {
+            color: #444;
+            font-size: 1.1rem;
+        }
+
+        .emoji {
+            margin-left: 5px;
+        }
+
+        .timestamp {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        blockquote {
+            background-color: #f4f4f4;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-left: 4px solid #764ba2;
+            font-style: italic;
+            border-radius: 4px;
+        }
+
+        a.back-link {
+            margin-top: 25px;
+            color: white;
+            background: #667eea;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            text-align: center;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        a.back-link:hover {
+            background: #764ba2;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Public Mood & Reply Feed</h1>
+<section class="container">
+    {% if feed_items %}
+    {% for item in feed_items %}
+    <div class="feed-item">
+        {% if item.type == 'mood' %}
+        <div class="feed-type">😌 Mood</div>
+        <div class="username">{{ item.user.username }} is feeling <strong>{{ item.mood_type }}</strong></div>
+        {% if item.message %}
+        <div>{{ item.message }}</div>
+        {% endif %}
+        {% elif item.type == 'reply' %}
+        <div class="feed-type">💬 Reply</div>
+        <blockquote>
+            Anonymous said: "{{ item.anonymous_message }}"
+        </blockquote>
+        <div class="username">{{ item.user.username }} replied with <strong>{{ item.mood_type }}</strong> mood</div>
+        <div>{{ item.reply_text }}</div>
+        {% endif %}
+        <div class="timestamp">🕒 {{ item.timestamp.strftime('%Y-%m-%d %H:%M') }}</div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p style="text-align: center; font-style: italic;">No public moods or replies yet.</p>
+    {% endif %}
+    <a href="{{ url_for('dashboard') }}" class="back-link">⬅️ Back to Dashboard</a>
+</section>
+
+</body>
+</html>

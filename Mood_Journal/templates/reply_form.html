@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reply to Anonymous Message</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Nunito', sans-serif;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2 {
+            color: #bb86fc;
+            margin-bottom: 20px;
+        }
+        .msg-box {
+            background: #1f1f1f;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #bb86fc;
+            box-shadow: 0 0 10px #bb86fc44;
+            margin-bottom: 30px;
+            max-width: 600px;
+            width: 100%;
+        }
+        form {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 0 15px #03dac6aa;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            background: #292929;
+            color: #fff;
+            font-size: 1rem;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            background: #03dac6;
+            color: #121212;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #00b3a1;
+        }
+        a {
+            margin-top: 20px;
+            color: #bb86fc;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<h2>✍️ Reply to Anonymous Message</h2>
+
+<div class="msg-box">
+    <strong>Original Message:</strong>
+    <p>{{ message.content }}</p>
+</div>
+
+<form method="POST">
+    <label for="mood_type">Your Feeling</label>
+    <select name="mood_type" id="mood_type" required>
+        {% for mood in mood_options %}
+        <option value="{{ mood }}">{{ mood }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="reply_text">Your Reply</label>
+    <textarea name="reply_text" id="reply_text" rows="5" placeholder="Write your reply here..." required></textarea>
+
+    <button type="submit">Send Public Reply</button>
+</form>
+
+<a href="{{ url_for('anonymous_messages') }}">⬅️ Back to Messages</a>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>👤 Add New User</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap');
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Floating emojis in background */
+        .emoji-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .emoji-bg span {
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0.1;
+            animation: floatUp linear infinite;
+            user-select: none;
+            filter: drop-shadow(0 0 1px rgba(0,0,0,0.1));
+        }
+
+        /* Different animation durations and horizontal positions */
+        .emoji-bg span:nth-child(1) {
+            left: 10%;
+            animation-duration: 18s;
+            animation-delay: 0s;
+        }
+        .emoji-bg span:nth-child(2) {
+            left: 25%;
+            animation-duration: 22s;
+            animation-delay: 3s;
+        }
+        .emoji-bg span:nth-child(3) {
+            left: 45%;
+            animation-duration: 20s;
+            animation-delay: 1.5s;
+        }
+        .emoji-bg span:nth-child(4) {
+            left: 60%;
+            animation-duration: 25s;
+            animation-delay: 4s;
+        }
+        .emoji-bg span:nth-child(5) {
+            left: 80%;
+            animation-duration: 19s;
+            animation-delay: 2s;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(110vh) rotate(0deg);
+                opacity: 0.1;
+            }
+            50% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(360deg);
+                opacity: 0.1;
+            }
+        }
+
+        .form-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        label {
+            display: block;
+            margin: 12px 0 6px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .messages {
+            margin-top: 15px;
+            color: green;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+<div class="emoji-bg">
+    <span>🌟</span>
+    <span>✨</span>
+    <span>🌈</span>
+    <span>💫</span>
+    <span>🎉</span>
+</div>
+
+<div class="form-box">
+    <h2>👤 Add New User</h2>
+    <form method="POST">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+
+        <label><input type="checkbox" name="is_admin"> Is Admin?</label>
+
+        <button type="submit">Add User</button>
+    </form>
+
+    <a href="{{ url_for('admin_panel') }}" class="back-link">⬅ Back to Admin Panel</a>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div>{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+</div>
+</body>
+</html>

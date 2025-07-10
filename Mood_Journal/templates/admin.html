@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6fc;
+            margin: 0;
+            padding: 40px;
+            color: #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before,
+        body::after {
+            content: "😎 🥲 😍 🤯 😭 😇 🤓 😍 🥰";
+            font-size: 60px;
+            position: absolute;
+            color: rgba(180, 180, 255, 0.1);
+            white-space: nowrap;
+            width: 100%;
+            text-align: center;
+            z-index: 0;
+        }
+
+        body::before {
+            top: 10%;
+            left: -10%;
+            transform: rotate(-5deg);
+        }
+
+        body::after {
+            bottom: 10%;
+            right: -10%;
+            transform: rotate(5deg);
+        }
+
+        h2 {
+            color: #4a4a4a;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .top-links {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .top-links a {
+            text-decoration: none;
+            background: #667eea;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .top-links a:hover {
+            background: #5a67d8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        th, td {
+            padding: 14px 16px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #f1f3ff;
+        }
+
+        td a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        td a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            color: green;
+            font-weight: bold;
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+<h2>🛠️ Admin Panel – User Management</h2>
+
+<div class="top-links">
+    <a href="/dashboard">⬅ Back to Dashboard</a>
+    <a href="/admin/user/add">➕ Add New User</a>
+</div>
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Admin?</th>
+        <th>Actions</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ 'Yes' if user.is_admin else 'No' }}</td>
+        <td>
+            <a href="/admin/user/edit/{{ user.id }}">Edit</a> |
+            <a href="/admin/user/delete/{{ user.id }}" onclick="return confirm('Delete this user?')">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>

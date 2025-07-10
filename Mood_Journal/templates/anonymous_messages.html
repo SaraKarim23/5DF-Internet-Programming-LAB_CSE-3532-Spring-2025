@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Anonymous Messages</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+        /* Base & font */
+        body {
+            background: #121212;
+            color: #e0e0e0;
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #bb86fc;
+        }
+
+        a.back-link {
+            background: #292929;
+            color: #bb86fc;
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 0 10px #bb86fc66;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        a.back-link:hover {
+            background: #3e3e3e;
+            box-shadow: 0 0 20px #bb86fcaa;
+        }
+
+        .send-msg-callout {
+            background: #292929;
+            border-left: 6px solid #03dac6;
+            padding: 15px 20px;
+            max-width: 700px;
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 0 12px #03dac644;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #03dac6;
+        }
+
+        .send-msg-callout span {
+            user-select: all;
+            overflow-wrap: anywhere;
+        }
+
+        button.copy-btn {
+            background: #03dac6;
+            border: none;
+            color: #121212;
+            font-weight: 700;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 15px;
+            flex-shrink: 0;
+        }
+
+        button.copy-btn:hover {
+            background: #00b3a1;
+        }
+
+        .message-container {
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .message {
+            background: #1f1f1f;
+            border-left: 6px solid #bb86fc;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 0 12px #bb86fc44;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .message p {
+            margin: 6px 0;
+        }
+
+        .timestamp {
+            font-size: 0.85rem;
+            color: #888;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            user-select: none;
+        }
+
+        .timestamp::before {
+            content: "🕒";
+        }
+
+        .message-content {
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        .reply-button {
+            margin-top: 10px;
+            background: #bb86fc;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            color: #121212;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .reply-button:hover {
+            background: #9f6fe5;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #777;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-top: 50px;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px 10px;
+            }
+            .message-container {
+                max-width: 100%;
+            }
+            a.back-link, .send-msg-callout, button.copy-btn, .reply-button {
+                width: 100%;
+                text-align: center;
+                display: block;
+                margin-bottom: 20px;
+            }
+            .send-msg-callout {
+                flex-direction: column;
+                gap: 10px;
+                align-items: stretch;
+            }
+            button.copy-btn {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h2>🕵️‍♂️ Your Anonymous Messages</h2>
+
+<!-- Send Message Link Callout -->
+<div class="send-msg-callout">
+    <div>
+        Your anonymous message link:
+        <span id="sendMsgLink">{{ url_for('sendmsg', user_id=user.id, _external=True) }}</span>
+    </div>
+    <button class="copy-btn" onclick="copyLink()">Copy</button>
+</div>
+
+<div class="message-container">
+    {% if messages %}
+    {% for msg in messages %}
+    <div class="message" style="animation-delay: {{ loop.index0 * 0.1 }}s;">
+        <p class="timestamp">{{ msg.timestamp.strftime('%Y-%m-%d %H:%M') }}</p>
+        <p class="message-content">💬 {{ msg.content }}</p>
+        <a href="{{ url_for('reply', msg_id=msg.id) }}" class="reply-button">Reply</a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p class="empty-message">No anonymous messages yet.</p>
+    {% endif %}
+</div>
+
+<a href="/dashboard" class="back-link">⬅️ Back to Dashboard</a>
+
+<script>
+    function copyLink() {
+        const link = document.getElementById('sendMsgLink').textContent;
+        navigator.clipboard.writeText(link).then(() => {
+            alert('Link copied to clipboard!');
+        }).catch(() => {
+            alert('Failed to copy link. Please copy manually.');
+        });
+    }
+</script>
+
+</body>
+</html>

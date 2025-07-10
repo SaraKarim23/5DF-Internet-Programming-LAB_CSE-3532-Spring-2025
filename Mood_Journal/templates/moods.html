@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Add/View Moods | Mood Journal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        header h2 {
+            margin: 0;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            color: #fbd38d;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #4a4a4a;
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        form.add-mood-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        select, textarea {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        select:focus, textarea:focus {
+            outline-color: #764ba2;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        label {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        button[type="submit"] {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #764ba2;
+        }
+
+        .mood-list {
+            max-height: 400px;
+            overflow-y: auto;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .mood-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .mood-emoji {
+            font-size: 2.2rem;
+            flex-shrink: 0;
+        }
+
+        .mood-content {
+            flex: 1;
+        }
+
+        .mood-time {
+            color: #999;
+            font-size: 0.9rem;
+            text-align: right;
+            font-family: monospace;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #aaa;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h2>😊 Mood Journal - {{ user.username }}</h2>
+    <nav>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+        <a href="{{ url_for('anonymous_messages') }}">Anonymous Messages</a>
+        <a href="{{ url_for('public_feed') }}">Public Feed</a>
+        {% if session.get('is_admin') %}
+        <a href="{{ url_for('admin_panel') }}">Admin Panel</a>
+        {% endif %}
+    </nav>
+</header>
+
+<section class="container">
+    <h3>Add a New Mood</h3>
+    <form method="POST" action="{{ url_for('mood') }}" class="add-mood-form">
+        <select name="mood_type" required>
+            <option value="">-- Select Your Mood --</option>
+            {% for mood in mood_options %}
+            <option value="{{ mood }}">{{ mood }}</option>
+            {% endfor %}
+        </select>
+        <textarea name="message" placeholder="What's on your mind? (Optional)"></textarea>
+        <label><input type="checkbox" name="is_public" /> Make this mood public</label>
+        <button type="submit">Add Mood</button>
+    </form>
+
+    <h3>Your Moods</h3>
+    <div class="mood-list">
+        {% if moods %}
+        {% for mood in moods %}
+        <div class="mood-item">
+            <span class="mood-emoji">
+              {% set m = mood.mood_type.lower() %}
+              {% if m == 'happy' %} 😄
+              {% elif m == 'sad' %} 😢
+              {% elif m == 'angry' %} 😠
+              {% elif m == 'motivated' %} 💪
+              {% elif m == 'depressed' %} 😔
+              {% elif m == 'romantic' %} ❤️
+              {% elif m == 'heart broken' %} 💔
+              {% else %} 😊
+              {% endif %}
+            </span>
+            <div class="mood-content">
+                <strong>{{ mood.mood_type }}</strong><br />
+                {{ mood.message }}
+            </div>
+            <div class="mood-time">{{ mood.timestamp.strftime('%Y-%m-%d %H:%M') }}</div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p class="empty-message">You haven't added any moods yet.</p>
+        {% endif %}
+    </div>
+</section>
+</body>
+</html>

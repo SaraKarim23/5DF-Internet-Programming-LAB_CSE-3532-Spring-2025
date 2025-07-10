@@ -34,11 +34,17 @@ $result = $conn->query($query);
 </head>
 <body class="bg-gray-100 min-h-screen">
     <!-- Navigation Bar -->
-    <nav class="bg-white shadow-md p-4 flex justify-between items-center">
+<nav class="bg-white shadow-md p-4 flex justify-between items-center">
     <h1 class="text-2xl font-bold text-red-600">🩸BloodConnect</h1>
     <div class="flex space-x-4">
+        <a href="create_request.php" class="text-red-600 hover:text-red-800 font-medium bg-gray-100 px-4 py-2 rounded-lg transition duration-300">Create Request</a>
+        <a href="view_requests.php" class="text-red-600 hover:text-red-800 font-medium bg-gray-100 px-4 py-2 rounded-lg transition duration-300">View Requests</a>
+        <a href="donation_history.php" class="text-red-600 hover:text-red-800 font-medium bg-gray-100 px-4 py-2 rounded-lg transition duration-300">My Donations</a>
+        <a href="view_camps.php" class="text-red-600 hover:text-red-800 font-medium bg-gray-100 px-4 py-2 rounded-lg transition duration-300">Donation Camps</a>
+
         <a href="edit_profile.php" class="text-red-600 hover:text-red-800 font-medium bg-gray-100 px-4 py-2 rounded-lg transition duration-300">Profile</a>
         <a href="logout.php" class="text-red-600 hover:text-red-800 font-medium bg-gray-100 px-4 py-2 rounded-lg transition duration-300">Logout</a>
+        
     </div>
 </nav>
 

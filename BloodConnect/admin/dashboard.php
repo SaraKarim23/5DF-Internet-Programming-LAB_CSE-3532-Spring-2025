@@ -55,6 +55,8 @@ if (!isset($_SESSION['admin_id'])) {
         <h2>Welcome, Admin</h2>
         <a href="manage_users.php">Manage Users</a>
         <a href="../logout.php">Logout</a>
+        <a href="manage_requests.php">Manage Blood Requests</a>
+        <a href="manage_camps.php">Manage Donation Camps</a>
     </div>
 </body>
 </html>

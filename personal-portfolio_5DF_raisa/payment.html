@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Payment | Learn with Raisa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles_C231526.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fa;
+      padding: 40px;
+      text-align: center;
+    }
+    .payment-box {
+      max-width: 400px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    button {
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="payment-box">
+    <h2>Complete Your Purchase</h2>
+    <p id="productName"></p>
+    <input type="text" id="promoCode" placeholder="Enter Promo Code (optional)" />
+    <button onclick="payNow()">Pay Now</button>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const type = urlParams.get('type');
+    const id = urlParams.get('id');
+
+    document.getElementById("productName").innerText = `${type.toUpperCase()} - ${id.replace(/-/g, ' ')}`;
+
+    async function payNow() {
+      const promo = document.getElementById("promoCode").value.trim();
+      const res = await fetch("/create-checkout-session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type, id, promo })
+      });
+
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert("Something went wrong. Try again.");
+      }
+    }
+  </script>
+</body>
+</html>

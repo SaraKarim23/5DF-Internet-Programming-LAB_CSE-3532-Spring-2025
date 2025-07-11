@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>H2O Hero Water Delivery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>H2O Hero</h1>
+    <p>Fresh. Clean. Delivered. Get water anytime, from 500ml to 10,000L — right to your doorstep.</p>
+    <a href="#about">Explore More</a>
+  </header>
+
+  <section id="about">
+    <h2>Why Choose Us?</h2>
+    <p>H2O Hero is your go-to water delivery partner. Whether it's a small family need or large-scale water for events or industries, we've got you covered.</p>
+  </section>
+
+  <section>
+    <h2>Our Water Options</h2>
+    <div class="feature-card">
+  <h3>Purified Water</h3>
+  <p>"Clean water, clear mind."</p>
+  <p>৳25 per liter</p>
+
+  <!-- Quantity buttons -->
+  <div class="quantity-control">
+    <button onclick="changeQuantity('Purified Water', -1, 25)">−</button>
+    <span id="qty-Purified Water">1</span> L
+    <button onclick="changeQuantity('Purified Water', 1, 25)">+</button>
+  </div>
+
+  <!-- Cart button -->
+  <button onclick="addToCart('Purified Water', 25)">Add to Cart</button>
+</div>
+<div class="feature-card">
+  <h3>Spring Water</h3>
+  <p>"Nature’s gift in every drop."</p>
+  <p>৳50 per liter</p>
+
+  <!-- Quantity buttons -->
+  <div class="quantity-control">
+    <button onclick="changeQuantity('Spring Water', -1, 50)">−</button>
+    <span id="qty-Spring Water">1</span> L
+    <button onclick="changeQuantity('Spring Water', 1, 50)">+</button>
+  </div>
+
+  <!-- Cart button -->
+  <button onclick="addToCart('Spring Water', 50)">Add to Cart</button>
+</div>
+<div class="feature-card">
+  <h3>Distilled Water</h3>
+  <p>"Pure. Simple. Essential."</p>
+  <p>৳170 per liter</p>
+
+  <!-- Quantity buttons -->
+  <div class="quantity-control">
+    <button onclick="changeQuantity('Distilled Water', -1, 170)">−</button>
+    <span id="qty-Distilled Water">1</span> L
+    <button onclick="changeQuantity('Distilled Water', 1, 170)">+</button>
+  </div>
+
+  <!-- Cart button -->
+  <button onclick="addToCart('Distilled Water', 170)">Add to Cart</button>
+</div>
+<div class="feature-card">
+  <h3>Alkaline Water</h3>
+  <p>"Balance your body, one sip at a time."</p>
+  <p>৳60 per liter</p>
+
+  <!-- Quantity buttons -->
+  <div class="quantity-control">
+    <button onclick="changeQuantity('Alkaline Water', -1, 60)">−</button>
+    <span id="qty-Alkaline Water">1</span> L
+    <button onclick="changeQuantity('Alkaline Water', 1, 60)">+</button>
+  </div>
+
+  <!-- Cart button -->
+  <button onclick="addToCart('Alkaline Water', 60)">Add to Cart</button>
+</div>
+
+</section>
+
+  <section>
+    <h2>🛒 Cart Summary</h2>
+    <ul id="cartItems"></ul>
+    <p>Total: ৳<span id="totalPrice">0</span></p>
+  </section>
+
+  <section>
+    <h2>Track Your Daily Water Intake</h2>
+    <div class="tracker">
+      <label for="waterIntake">Enter water intake (in liters):</label>
+      <input type="number" id="waterIntake" placeholder="e.g., 2" min="1" max="10000">
+      <button onclick="trackWater()">Track</button>
+      <p id="intakeResult"></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>💡 Water Inspiration</h2>
+    <p>See how people stay hydrated and live healthier!</p>
+    <div class="pinterest-frame">
+      <iframe src="https://assets.pinterest.com/ext/embed.html?id=11540542792891441" height="714" width="345" frameborder="0" scrolling="no"></iframe>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact Us</h2>
+    <form onsubmit="event.preventDefault(); alert('Your request has been submitted!')">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Delivery Address" required>
+      <textarea rows="4" placeholder="Your Message / Order Details"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <section>
+    <h2 style="color: #5c0606;">Any Help?</h2>
+    <p style="font-size: 1.1rem; color: #07090f;">
+      📞 Contact: <strong>016783930003</strong><br />
+      📧 Gmail: <strong>tmt.582@gmail.com</strong>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 H2O Hero Water Delivery. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

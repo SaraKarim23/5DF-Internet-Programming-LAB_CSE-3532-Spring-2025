@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body id="body">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <h1 class="navbar-brand" href="#">C++</h1>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Array.html">Back</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="classes.html">Next</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Topics
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="C++.html">Introduction</a></li>
+                  <li><a class="dropdown-item" href="C++.html">Syntax & Statement</a></li>
+                  <li><a class="dropdown-item" href="C++.html">Comment</a></li>
+                  <li><a class="dropdown-item" href="C++.html">Variable & Data Type</a></li>
+                  <li><a class="dropdown-item" href="string.html">String</a></li>
+                  <li><a class="dropdown-item" href="if-else.html">If-Else,Switch-Case</a></li>
+                  <li><a class="dropdown-item" href="loop.html">Loop</a></li>
+                  <li><a class="dropdown-item" href="Array.html">Array</a></li>
+                  <li><a class="dropdown-item" href="function.html">Function</a></li>
+                  <li><a class="dropdown-item" href="classes.html">C++ Classes</a></li>
+                </ul>
+              </li>  
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+      <!--end navbar-->
+
+      <!--Topic start-->
+    <div id="intro" class="my-4 text-white" >
+        <div id="func">
+            <h4 class="a1">Function</h4>
+            <p>A function is a block of code that performs a specific task. Instead of writing the same code multiple times, you can define it once as a function and simply "call" it whenever needed.</p>
+            <p>C++ provides some pre-defined functions, such as main(), which is used to execute code.</p>
+            <h6>Types of Function -</h6>
+            1.Built-in: Already provided by C++ (e.g., cout, sqrt()) <br>
+            2.User-defined: Created by programmers to solve specific tasks <br> <br>
+            <h6> Basic Syntax:</h6>
+            <div class="a23">
+                <div class="code-box">
+                    return_type function_name(parameters) { <br>
+                        // code to execute <br>
+                        return value; <br>
+                    }
+                    
+                </div>
+            </div>
+            <h6>Example -</h6>
+            <div class="a23">
+                <div class="code-box">
+                    int add(int a, int b) { <br>
+                        return a + b; <br>
+                    }
+                </div>
+            </div> <br>
+
+            <h5>Parameters and Arguments</h5>
+            <p>When working with functions in C++, we often need to pass values in and out. That’s where parameters and arguments come in. They work together to help functions receive and use data.</p>
+            <h6> What is a Parameter?</h6>
+            <li>A parameter is a placeholder used inside a function definition.</li>
+            <li>It acts like a local variable that waits to receive a value when the function is called.</li>
+            <div class="a23">
+                <div class="code-box">
+                    void greet(string name) {  // 'name' is a parameter <br>
+                     cout << "Hello, " << name; <br>}
+                </div>
+            </div>
+            <h6> What is an Argument?</h6>
+            <li>An argument is the actual value you pass to a function when you call it.</li>
+            <div class="a23">
+                <div class="code-box">
+                    greet("Ayesha"); // "Ayesha" is the argument
+                </div>
+            </div> <br>
+
+            <h5>Function Overloading</h5>
+            <p>With function overloading, multiple functions can have the same name with different parameters.</p>
+            <h6>Example -</h6>
+            <div class="a23">
+                <div class="code-box">
+                    int myFunc(int x, int y) { <br>
+                        return x + y; <br>
+                      } <br> 
+                      
+                      double myFunc(double x, double y) { <br>
+                        return x + y; <br>
+                      } <br> <br>                      
+                      int main() { <br>
+                        int myNum1 = plusFunc(8, 5); <br>
+                        double myNum2 = plusFunc(4.3, 6.26); <br>
+                        cout << "Int: " << myNum1 << "\n"; <br>
+                        cout << "Double: " << myNum2; <br>
+                        return 0; <br>
+                      }  
+                </div>
+            </div> <br>
+
+            <h5>Recursion in C++</h5>
+            <p>Recursion is a programming concept where a function calls itself to solve smaller parts of a bigger problem. It may sound tricky at first, but it’s actually a powerful technique used in problems like factorials, Fibonacci series, tree traversal, and more.</p>
+            <h6>How It Works:</h6>
+            <p>In recursion, a function keeps calling itself until it reaches a stopping point, known as the base case. Without a base case, the function would continue forever and crash the program.</p>
+            <h6> Basic Structure:</h6>
+            <div class="a23">
+                <div class="code-box">
+                    void function() { <br>
+                        // Base case (stopping condition) <br>
+                        if (someCondition) return; <br> <br>
+                    
+                        // Recursive call <br>
+                        function(); <br>
+                    }
+                </div>
+            </div>
+
+            <h6>Example -</h6>
+            <div class="a23">
+                <div class="code-box">
+                    int factorial(int n) { <br>
+                        if (n == 0) return 1; // base case <br>
+                        else return n * factorial(n - 1);  // recursive step <br>
+                    }
+                </div>
+            </div>
+            <p>Explanation -</p>
+            <p>If you call factorial(5), it breaks down like this: <br>
+                5 * factorial(4) <br>
+                4 * factorial(3) <br>
+                3 * factorial(2) <br>
+                2 * factorial(1) <br>
+                1 * factorial(0)</p>
+            <p>And finally returns 120.</p>    
+
+
+        </div>
+    </div>
+
+
+
+      <!--custom js link-->
+   <script src="script.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+       crossorigin="anonymous"></script> 
+    
+</body>
+</html>

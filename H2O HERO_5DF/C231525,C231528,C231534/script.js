@@ -1,52 +1,58 @@
-const smallCups = document.querySelectorAll(".cup-small");
-const liters = document.getElementById("liters");
-const percentage = document.getElementById("percentage");
-const remained = document.getElementById("remained");
+let total = 0;
+const cartItems = document.getElementById("cartItems");
+const totalPrice = document.getElementById("totalPrice");
 
-updateBigCup();
+const quantities = {
+  "Purified Water": 1,
+  "Spring Water": 1,
+  "Distilled Water": 1,
+  "Alkaline Water": 1
+};
 
-smallCups.forEach((cup, idx) => {
-  cup.addEventListener("click", () => highlightCups(idx));
-});
+// ✅ Cart-এ Add করার জন্য ঠিক করা ফাংশন
+function addToCart(item, pricePerLiter) {
+  const quantity = quantities[item];
+  const itemTotal = pricePerLiter * quantity;
 
-function highlightCups(idx) {
-  if (
-    smallCups[idx].classList.contains("full") &&
-    !smallCups[idx].nextElementSibling?.classList.contains("full")
-  ) {
-    idx--;
-  }
+  const li = document.createElement("li");
+  li.innerHTML = `
+    ${item} - ${quantity}L x ৳${pricePerLiter} = ৳${itemTotal}
+    <button class="remove-btn" onclick="removeItem(this, ${itemTotal})">❌</button>
+  `;
 
-  smallCups.forEach((cup, i) => {
-    if (i <= idx) {
-      cup.classList.add("full");
-    } else {
-      cup.classList.remove("full");
-    }
-  });
-
-  updateBigCup();
+  cartItems.appendChild(li);
+  total += itemTotal;
+  totalPrice.textContent = total;
 }
 
-function updateBigCup() {
-  const fullCups = document.querySelectorAll(".cup-small.full").length;
-  const totalCups = smallCups.length;
+// ✅ Quantity পরিবর্তনের জন্য ফাংশন
+function changeQuantity(item, change, pricePerLiter) {
+  quantities[item] += change;
+  if (quantities[item] < 1) quantities[item] = 1;
+  document.getElementById("qty-" + item).textContent = quantities[item];
+}
 
-  if (fullCups === 0) {
-    percentage.style.visibility = "hidden";
-    percentage.style.height = 0;
-    percentage.innerText = "";
-  } else {
-    percentage.style.visibility = "visible";
-    percentage.style.height = `${(fullCups / totalCups) * 330}px`;
-    percentage.innerText = `${(fullCups / totalCups) * 100}%`;
-  }
+// ✅ Cart থেকে Remove করার ফাংশন
+function removeItem(button, itemTotal) {
+  const li = button.parentElement;
+  li.remove();
+  total -= itemTotal;
+  totalPrice.textContent = total;
+}
 
-  if (fullCups === totalCups) {
-    remained.style.visibility = "hidden";
-    remained.style.height = 0;
+// ✅ Water Tracker ফাংশন (Fixed Template String)
+function trackWater() {
+  const intake = parseFloat(document.getElementById("waterIntake").value);
+  const result = document.getElementById("intakeResult");
+
+  if (isNaN(intake) || intake <= 0) {
+    result.textContent = "Please enter a valid number.";
+    result.style.color = "red";
+  } else if (intake >= 3) {
+    result.textContent = `Great! You drank ${intake}L today. You're well hydrated. 💧`;
+    result.style.color = "green";
   } else {
-    remained.style.visibility = "visible";
-    liters.innerText = `${2 - 0.25 * fullCups}L`;
+    result.textContent = `You drank ${intake}L. Try to drink a little more!`;
+    result.style.color = "orange";
   }
 }

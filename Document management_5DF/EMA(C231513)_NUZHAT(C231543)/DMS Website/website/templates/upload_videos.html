@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Upload Videos{% endblock %}
+{% block content %}
+<div class="container py-5">
+<h2 class="text-center mb-4">🎬 Upload Videos</h2>
+<form method="POST" enctype="multipart/form-data">
+  <input type="file" name="file" class="form-control" required>
+  <br>
+  <button class="btn btn-success">Upload Video</button>
+</form>
+<hr>
+<div class="row mt-4">
+  {% for file in files %}
+  <div class="col-md-6 mb-4">
+    <div class="card">
+      <video controls style="width: 100%;">
+        <source src="{{ url_for('views.uploaded_file', category='videos', filename=file) }}">
+      </video>
+      <div class="card-body text-center">
+        <h6>{{ file }}</h6>
+        <a href="{{ url_for('views.uploaded_file', category='videos', filename=file) }}" class="btn btn-sm btn-primary" target="_blank">View</a>
+        <button class="btn btn-sm btn-danger" onclick="deleteFile('{{ file }}')">Delete</button>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+<script>
+  function deleteFile(filename) {
+    fetch("/delete-file/videos", {
+      method: "POST",
+      body: JSON.stringify({ filename }),
+      headers: { "Content-Type": "application/json" }
+    }).then(() => location.reload());
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes of C++</title>
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+ 
+     <link rel="stylesheet" href="style.css">
+ 
+</head>
+
+<nav class="navbar navbar-expand-md navbar bg-dark border-bottom border-body p-3" data-bs-theme="dark">
+  <div class="container-fluid ">
+    <a class="navbar-brand fs-1" href="#"><span class="text-primary">C++</span> Langauge </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html" class="home1">home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="page4.html">Sign in</a>
+        </li>
+        
+    </div>
+  </div>
+</nav>
+<br>
+
+
+<body id="body">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="Array.html">Back</a>
+              </li>
+               <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Topics
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="C++.html">Introduction</a></li>
+                  <li><a class="dropdown-item" href="C++.html">Syntax & Statement</a></li>
+                  <li><a class="dropdown-item" href="C++.html">Comment</a></li>
+                  <li><a class="dropdown-item" href="C++.html">Variable & Data Type</a></li>
+                  <li><a class="dropdown-item" href="string.html">String</a></li>
+                  <li><a class="dropdown-item" href="if-else.html">If-Else,Switch-Case</a></li>
+                  <li><a class="dropdown-item" href="loop.html">Loop</a></li>
+                  <li><a class="dropdown-item" href="Array.html">Array</a></li>
+                  <li><a class="dropdown-item" href="function.html">Function</a></li>
+                  <li><a class="dropdown-item" href="classes.html">C++ Classes</a></li>
+                </ul>
+              </li>  
+            </ul>
+    
+          </div>
+        </div>
+      </nav>
+      <!--end navbar-->
+
+      <!--Topic start-->
+      <div id="intro" class="my-4 text-white">
+        <div id="classes">
+            <h4 class="a1"> Classes of C++</h4>
+            <h5>Introduction to Object-Oriented Programming (OOP):</h5>
+            <p class="pp1">Object-Oriented Programming, or OOP, is a way of writing programs by focusing on objects—real-world or logical entities that have properties (data) and behaviors (functions). Instead of just writing procedures and functions, OOP allows us to model things more naturally, just like we see in daily life.</p>
+            <p>In C++, OOP helps break down complex problems into smaller, manageable parts by organizing code into classes and objects. This approach makes code easier to understand, modify, reuse, and scale.</p>
+            <p>Object-oriented programming has several advantages over procedural programming: 
+            <li>OOP is faster and easier to execute</li>
+            <li>OOP provides a clear structure for the programs</li>
+            <li>OOP makes it possible to create full reusable applications with less code and shorter development time</li>
+            <li>OOP helps to keep the C++ code DRY "Don't Repeat Yourself", and makes the code easier to maintain, modify and debug</li>
+        </p> <br>
+        <h5>C++ Classes and Objects</h5>
+        <p class="pp1">In C++, classes and objects are the heart of Object-Oriented Programming (OOP). They allow you to design your code in a way that mirrors how things work in the real world—by grouping data and behavior into single units.
+        </p>
+        <h6>What is a Class?</h6>
+        <p>A class is like a blueprint or a template. It defines what an object should look like and how it should behave. Inside a class, you can declare variables (called data members) and functions (called member functions) that work with those variables.</p>
+        <h6>Example -</h6>
+        <div class="a23">
+            <div class="code-box">
+                class Car { <br>
+                    public: <br>
+                        string brand; <br>
+                        int speed; <br> <br>
+                        void drive() { <br>
+                            cout << "The car is moving." << endl; <br>
+                        } <br>
+                    };    
+            </div>
+        </div> 
+        <p>This defines a Car class that has two properties (brand, speed) and a behavior (drive()).</p>
+        <h6>What is an Object?</h6>
+        <p class="pp1">An object is an actual instance of a class. If the class is a design, the object is the real thing built from it.</p>
+        <h6>Example -</h6>
+        <div class="a23">
+            <div class="code-box">
+                Car myCar;          // Object created from the class Car <br>
+                myCar.brand = "BMW"; <br>
+                myCar.speed = 120; <br>
+                myCar.drive(); <br>                
+            </div>
+        </div> 
+        <h6>Why Use Classes and Objects?</h6>
+        <li>Keep code clean, organized, and reusable</li>
+        <li>Easy to model real-life systems (like a Student, Book, BankAccount, etc.)</li>
+        <li>Essential for building large software in teams or modular systems</li>
+        <br>
+        <h5>Class Methods</h5>
+        <p>In C++, a class method (also called a member function) is a function  that belongs to the class.</p>
+        <p>There are two ways to define functions that belongs to a class:
+            <li>Inside class definition</li>
+            <li>Outside class definition</li>
+        </p>
+        <h6>Method Define Inside a Class</h6>
+        <div class="a23">
+            <div class="code-box">
+                class Person { <br>
+                    public: <br>
+                        void sayHello() { <br>
+                            cout << "Hello!" << endl; <br>
+                        } <br>
+                    };              
+            </div>
+        </div> 
+        <p>Here, sayHello() is a method that belongs to the Person class.</p>
+        <h6>Using the Method with an Object</h6>
+        <div class="a23">
+            <div class="code-box">
+                Person p; <br>
+                p.sayHello();  // Calling the method
+            </div>
+        </div>
+        <p>The method is called using the object followed by a dot (.) and the method name.</p>
+        <h6>Method Defined Outside the Class</h6> 
+        <p>You can also write the method outside the class using the scope resolution operator :: -</p>
+        <div class="a23">
+            <div class="code-box">
+                class Box { <br>
+                    public: <br>
+                        void show(); <br>
+                    }; <br> <br>   
+                    void Box::show() { <br>
+                        cout << "This is a box." << endl; <br>
+                    }
+            </div>
+        </div> <br>
+        <h6> Why Class Methods Matter?</h6>
+        <li>They make code modular and reusable</li>
+        <li>Allow each object to act on its own data</li>
+        <li>Keep related logic inside the class for better readability and structure</li>
+        <br> <br>
+        <h5>Constructor in C++</h5>
+        <p class="pp1">A constructor is a special function in C++ that runs automatically when you create an object from a class. Its main job is to initialize object data—so you don’t have to set every value manually after making an object.</p>
+        <h6>Key Characteristics of a Constructor:</h6>
+        <li>The constructor has the same name as the class</li>
+        <li>It doesn’t have a return type (not even void)</li>
+        <li>It runs automatically when an object is created</li>  <br>
+        <h6>Why Constructors Are Useful:</h6>
+        <li>Automatically set up objects with default or specific values</li>
+        <li>Make object creation cleaner and more efficient</li>
+        <li>Help prevent uninitialized or inconsistent object states</li>
+        <br>
+        <h6>Basic Example:</h6>
+        <div class="a23">
+            <div class="code-box">
+                class Student { <br>
+                    public: <br>
+                        string name; <br>
+                        int age; <br> <br>
+                        // Constructor <br>
+                        Student() { <br>
+                            name = "Unknown"; <br>
+                            age = 0; <br>
+                        } <br>
+                    }; <br><br>
+                    int main() { <br>
+                        Student s1; <br>
+                        cout << s1.name << " " << s1.age;  <br>// Output: Unknown 0 <br>
+                    }           
+            </div>
+        </div>
+        <p>Here, as soon as we create s1, the constructor sets default values.</p>
+        <h6>Parameterized Constructor</h6>
+        <div class="a23">
+            <div class="code-box">
+                class Student { <br>
+                    public: <br>
+                        string name; <br>
+                        int age; <br> <br>
+                        Student(string n, int a) { <br>
+                            name = n; <br>
+                            age = a; <br>
+                        } <br>
+                    }; <br> <br>
+                    Student s2("Aisha", 20);  
+            </div>
+        </div>
+        <p>Now the object is created and initialized in a single line.</p>
+
+        <h6>Multiple Constructors (Constructor Overloading)</h6>
+        <div class="a23">
+            <div class="code-box">
+                Student() { ... } <br>
+                Student(string n) { ... } <br>
+                Student(string n, int a) { ... }
+            </div>
+        </div> <br> <br>
+        <h5> Encapsulation in C++</h5>
+        <p class="pp1">Encapsulation is one of the core principles of Object-Oriented Programming in C++. It means wrapping data and related functions together in a single unit (usually a class), and restricting direct access to some of the object's components. Think of it like putting important things in a box and only allowing access through specific doors (functions).</p>
+        <h6>In Technical Terms:</h6>
+        Encapsulation is achieved using access specifiers:
+        <li>private → hidden from outside</li>
+        <li>public → accessible from outside</li>
+        <li>protected → used in inheritance</li> <br>
+        <h6>Example:</h6>
+        <div class="a23">
+            <div class="code-box">
+                class BankAccount { <br>
+                    private: <br>
+                        double balance; <br> <br>
+                    public: <br>
+                        void setBalance(double amount) { <br>
+                            if (amount >= 0) balance = amount; <br>
+                        } <br> <br>
+                        double getBalance() { <br>
+                            return balance; <br>
+                        } <br>
+                    };
+            </div>
+        </div> 
+        <p>Here:
+            <li>balance is private, so it can’t be accessed directly.</li>
+            <li>Instead, you use setBalance() and getBalance() to interact with it—safe and controlled.</li>
+        </p> <br> <br>
+        <h5> Inheritance in C++</h5>
+        <p>Inheritance is a key feature of Object-Oriented Programming in C++ that allows one class to inherit properties and behaviors from another class. This means we can reuse existing code, extend it, or customize it—without starting from scratch.</p>
+        <h6>Basic Idea:</h6>
+        <li>The class that gives its features is called the base class (or parent class)</li>
+        <li>The class that receives those features is called the derived class (or child class)</li>
+        <br>
+        <h6>Syntax Example:</h6>
+        <div class="a23">
+            <div class="code-box">
+                // Base class <br>
+                  class Vehicle { <br>
+                   public: <br>
+                 string brand = "Ford"; <br>
+                  void honk() { <br>
+                 cout << "Tuut, tuut! \n" ; <br>
+                } <br>
+                }; <br> <br>  
+                // Derived class <br>
+                 Car: public Vehicle { <br>
+                public: <br>
+               string model = "Mustang"; <br>
+                }; <br> <br>
+                int main() { <br>
+                 Car myCar; <br>
+                 myCar.honk(); <br>
+                cout << myCar.brand + " " + myCar.model; <br>
+                 return 0; <br>
+                }
+            </div>
+        </div> 
+        <h6>Types of Inheritance in C++:</h6>
+        1.Single Inheritance – One base class, one derived class <br>
+        2.Multilevel Inheritance – A class derived from a derived class <br>
+        3.Multiple Inheritance – A class inherits from more than one base class <br>
+        4.Hierarchical Inheritance – Multiple derived classes from one base class <br>
+        5.Hybrid Inheritance – A mix of the above types <br> <br>
+        <h5>C++ Polymorphism</h5>
+        <p>Polymorphism is a core concept in C++ that allows the same function or operator to behave differently depending on the context. The word itself means “many forms.” In programming, this means we can use a single name to represent different functionalities.</p>
+        <p>With polymorphism, you can write cleaner, more flexible code that adapts to different situations—without rewriting everything.</p>
+        <h6>Types of Polymorphism in C++:</h6>
+        <p>1. Compile-Time Polymorphism (Static): The decision about which function to call is made at compile time.</p>
+        <p>Example: Function Overloading</p>
+        <div class="a22">
+            <div class="code-box">
+                class Math { <br>
+                    public: <br>
+                        int add(int a, int b) { <br>
+                            return a + b; <br>
+                        } <br> <br>
+                        double add(double a, double b) { <br>
+                            return a + b; <br>
+                        } <br>
+                    };
+            </div>
+        </div> 
+        <p>Here, the function add() works with both integers and doubles.</p> <br>
+        <p>2. Run-Time Polymorphism (Dynamic): The decision of which method to call is made while the program is running.</p>
+        <p>Example: Virtual Function</p>
+        <div class="a22">
+            <div class="code-box">
+                class Animal { <br>
+                    public: <br>
+                        virtual void sound() { <br>
+                            cout << "Some sound" << endl; <br>
+                        } <br>
+                    }; <br> <br>
+                    class Dog : public Animal { <br>
+                    public: <br>
+                        void sound() override { <br>
+                            cout << "Bark" << endl; <br>
+                        } <br>
+                    }; <br> <br>
+                    void makeSound(Animal* a) { <br>
+                        a->sound(); <br>
+                    }
+            </div>
+        </div> 
+        <div class="a22">
+            <div class="code-box">
+                Dog d; <br>
+                makeSound(&d);  <br>// Output: Bark (not "Some sound")
+            </div>
+        </div> <br> <br>
+        <h5>Exceptions in C++</h5>
+        <p>An exception is an unexpected event or error that occurs during program execution. Instead of stopping the program, C++ lets you “throw” an error and “catch” it somewhere safe.</p>
+        <h6>Basic Syntax:</h6>
+        <div class="a23">
+            <div class="code-box">
+                try { <br>
+                    // Code that might throw an error <br>
+                } catch (type variable) { <br>
+                    // Code to handle the error <br>
+                }
+            </div>
+        </div>
+        <h6>Simple Example:</h6>
+        <div class="a23">
+            <div class="code-box">
+                #include &ltiostream&gt <br>
+                    using namespace std; <br> <br>
+                    int main() { <br>
+                        try { <br>
+                            int a = 5, b = 0; <br>
+                            if (b == 0) <br>
+                                throw "Cannot divide by zero!"; <br>
+                            cout << a / b; <br>
+                        } catch (const char* msg) { <br>
+                            cout << "Error: " << msg << endl; <br>
+                        } <br>
+                        return 0; <br>
+                    }
+            </div>
+        </div>
+        <p>Output: <br>
+            Error: Cannot divide by zero!</p>
+        <h6>Keywords:</h6>
+        <li>try – Wraps code that might cause an exception</li>
+        <li>throw – Sends the exception (error) out of the block</li>
+        <li>catch – Receives and handles the exception</li> <br>
+        <h6>Why Use Exceptions?</h6>
+        <li>Makes your code more reliable and readable</li>
+        <li>Keeps programs from crashing unexpectedly</li>
+        <li>Helps handle runtime errors cleanly</li>
+        <li>Useful in real applications: file handling, memory errors, user inputs, etc.</li>
+
+
+        </div>
+      </div>
+    
+
+
+     <!--custom js link-->
+   <script src="script.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+       crossorigin="anonymous"></script> 
+</body>
+</html>
